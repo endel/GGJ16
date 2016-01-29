@@ -1,0 +1,137 @@
+{
+	"meta": {
+		"image": "spritesheet.png",
+		"size": {"w":1024,"h":1024},
+		"scale": "1"
+	},
+	"frames": {
+		"god.png":
+		{
+			"frame": {"x":1,"y":1,"w":320,"h":320},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":320,"h":320},
+			"sourceSize": {"w":320,"h":320}
+		},
+		"particle-blood.png":
+		{
+			"frame": {"x":895,"y":282,"w":4,"h":4},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":4,"h":4},
+			"sourceSize": {"w":4,"h":4}
+		},
+		"presentation-3.png":
+		{
+			"frame": {"x":1,"y":323,"w":320,"h":240},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":320,"h":240},
+			"sourceSize": {"w":320,"h":240}
+		},
+		"presentation-2.png":
+		{
+			"frame": {"x":323,"y":323,"w":320,"h":240},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":320,"h":240},
+			"sourceSize": {"w":320,"h":240}
+		},
+		"presentation-1.png":
+		{
+			"frame": {"x":645,"y":1,"w":320,"h":240},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":320,"h":240},
+			"sourceSize": {"w":320,"h":240}
+		},
+		"power-4.png":
+		{
+			"frame": {"x":645,"y":243,"w":48,"h":48},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
+			"sourceSize": {"w":48,"h":48}
+		},
+		"center-stone.png":
+		{
+			"frame": {"x":695,"y":243,"w":48,"h":48},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
+			"sourceSize": {"w":48,"h":48}
+		},
+		"power-3.png":
+		{
+			"frame": {"x":745,"y":243,"w":48,"h":48},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
+			"sourceSize": {"w":48,"h":48}
+		},
+		"presentation-4.png":
+		{
+			"frame": {"x":323,"y":1,"w":320,"h":240},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":320,"h":240},
+			"sourceSize": {"w":320,"h":240}
+		},
+		"power-1.png":
+		{
+			"frame": {"x":845,"y":243,"w":48,"h":48},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
+			"sourceSize": {"w":48,"h":48}
+		},
+		"enemy-praying-0.png":
+		{
+			"frame": {"x":895,"y":243,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"enemy-step-1.png":
+		{
+			"frame": {"x":929,"y":243,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"enemy-step-0.png":
+		{
+			"frame": {"x":645,"y":293,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"enemy-praying-1.png":
+		{
+			"frame": {"x":679,"y":293,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"enemy-spot.png":
+		{
+			"frame": {"x":895,"y":277,"w":29,"h":3},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":29,"h":3},
+			"sourceSize": {"w":29,"h":3}
+		},
+		"power-2.png":
+		{
+			"frame": {"x":795,"y":243,"w":48,"h":48},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
+			"sourceSize": {"w":48,"h":48}
+		}
+	}
+}
