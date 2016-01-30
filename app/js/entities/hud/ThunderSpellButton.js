@@ -25,7 +25,8 @@ export default class ThunderSpellButton extends PIXI.Container {
   }
 
   get isAvailable () {
-    return this.cooldownMask.y > this.cooldownMask.targetY
+    console.log("isAvailable:", this.cooldownMask.y, this.cooldownMask.targetY)
+    return this.cooldownMask.y >= this.cooldownMask.targetY
   }
 
 }

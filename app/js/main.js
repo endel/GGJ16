@@ -17,12 +17,19 @@ window.currentMusic = null
 sounds.on('load', () => { console.log("Effects loaded") })
 music.on('load', () => { console.log("Music loaded") })
 
+var lastSoundPlayed = {}
 window.playSound = function(alternatives) {
   if (typeof(alternatives)==="string") {
     sounds.play(alternatives)
 
   } else {
-    var i = Math.floor(Math.random() * alternatives.length)
+    // play a different sound every time it's called
+    var i = 999;
+    do {
+      i = Math.floor(Math.random() * alternatives.length)
+    } while (i === lastSoundPlayed[ alternatives ])
+
+    lastSoundPlayed[ alternatives ] = i
     sounds.play(alternatives[i])
   }
 }

@@ -2,9 +2,11 @@ import { Behaviour } from 'behaviour.js'
 
 export default class SpellButtonBehaviour extends Behaviour {
 
-  onAttach () {
+  onAttach (fillVelocity = 0.5, usageBurn = 0.5) {
     this.onUse()
-    this.fillVelocity = 0.5
+
+    this.fillVelocity = fillVelocity
+
     this.on('use', this.onUse.bind(this))
   }
 

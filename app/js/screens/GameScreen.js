@@ -9,6 +9,7 @@ import RitualCircle from '../entities/RitualCircle'
 
 import WaveController from '../behaviours/controllers/WaveController'
 import Notification from '../entities/hud/Notification'
+import Lifebar from '../entities/hud/Lifebar'
 
 import God from '../entities/God'
 import GodBehaviour from '../behaviours/entities/GodBehaviour'
@@ -68,25 +69,39 @@ export default class GameScreen extends PIXI.Container {
     })
     this.addChild(this.god)
 
-    this.notification = new Notification()
-    this.notification.pivot.x = this.notification.bg.width / 2
-    this.notification.pivot.y = this.notification.bg.height / 2
-    this.notification.x = APP.width / 2
-    this.notification.y = this.god.y + this.god.height / 3
-    this.notification.once('gameover', () => this.emit('goto', GameOverScreen))
-    this.notification.goUp()
-    this.addChild(this.notification)
-
     this.ritualCircle = new RitualCircle(this.god)
     this.ritualCircle.pivot.x = this.ritualCircle.width / 2
     this.ritualCircle.pivot.y = this.ritualCircle.height / 2
     this.ritualCircle.x = (APP.width / 2) - 50
     this.ritualCircle.y = APP.height / 2 + this.ritualCircle.height - 10
+    this.addChild(this.ritualCircle)
+
+    //
+    // "HUD"
+    //
+
+    this.lifebar = new Lifebar()
+    this.lifebar.pivot.x = this.lifebar.width / 2
+    this.lifebar.pivot.y = this.lifebar.height / 2
+    this.lifebar.x = APP.width / 2
+    this.lifebar.y = APP.height / 2 + 30
+    this.lifebar.once('gameover', () => this.emit('goto', GameOverScreen))
+    this.addChild(this.lifebar)
+
+    this.notification = new Notification()
+    this.notification.pivot.x = this.notification.bg.width / 2
+    this.notification.pivot.y = this.notification.bg.height / 2
+    this.notification.x = APP.width / 2
+    this.notification.y = this.god.y + this.god.height / 3
+    this.notification.goUp()
+    this.addChild(this.notification)
+
+    // add wave controller to ritual circle
     this.ritualCircle.addBehaviour(this.waveController, {
       notification: this.notification,
+      lifebar: this.lifebar,
       god: this.god
     })
-    this.addChild(this.ritualCircle)
 
     window.addEventListener('resize', this.onResize.bind(this))
 

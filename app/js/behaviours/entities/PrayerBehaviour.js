@@ -11,9 +11,12 @@ export default class PrayerBehaviour extends Behaviour {
     this.waveController = waveController
     this.attributes = prayerTypes[ config.type ]
 
+    this._hp = parseInt(this.attributes.hp)
+
     this.targetSlot = config.targetSlot
     this.angle = config.angle
 
+    this.stopped = false
     this.praying = false
 
     this.originPoint = {
@@ -29,7 +32,23 @@ export default class PrayerBehaviour extends Behaviour {
     this.object.addChild(this.object.walking)
   }
 
+  get hp () { return this._hp }
+  set hp (value) {
+    if (value !== this._hp) {
+      this._hp = value
+      this.stopped = true
+      this.object.stop()
+
+      clock.setTimeout(() => {
+        this.stopped = false
+        this.object.play()
+      }, 500)
+    }
+  }
+
   update () {
+    if (this.stopped) return false;
+
     if (!this.praying) {
       this.move()
     } else {

@@ -6,6 +6,7 @@ canvas
   margin 0 auto
 
 body
+  text-align center
   background #000
 
   &.loaded
@@ -14,33 +15,16 @@ body
 
   .loading
     opacity 1
-    animation rotating 2s linear infinite
     position absolute
     top 0
     bottom 0
     right 0
     left 0
     margin auto
-    background url(../images/sprites/cabine.png) no-repeat
+    background url(../images/sprites/loader.png) no-repeat
+    width 494px
+    height 351px
     transition opacity 0.5s
-
-
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 @font-face
   font-family 'Berry_Rotunda'

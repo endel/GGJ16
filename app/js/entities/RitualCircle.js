@@ -131,14 +131,22 @@ export default class RitualCircle extends PIXI.Container {
       this.addChild(spot5)
     }
 
-    this.slotInstances.forEach((spot) => {
-      spot.on('click', this.onAction.bind(this, spot))
-    })
+    // this.slotInstances.forEach((spot) => {
+    //   spot.on('click', this.onAction.bind(this, spot))
+    // })
   }
 
   onAction (spot, e) {
     this.god.getEntity().emit('action', spot, e.data.global)
     console.log("Action on spot!", spot)
+  }
+
+  sortChildren () {
+    this.children.sort((a, b) => {
+      if (a.y < b.y) return -1;
+      if (a.y > b.y) return 1;
+      return 0;
+    });
   }
 
   resize () {

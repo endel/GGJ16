@@ -6,6 +6,10 @@ import Thunder from '../../entities/Thunder'
 export default class GodBehaviour extends Behaviour {
 
   onAttach (options) {
+    this.thunderSounds = ['GOD_Attack1_alt1', 'GOD_Attack1_alt2', 'GOD_Attack1_alt3']
+    this.killSounds = ['GOD_KilledHuman_01', 'GOD_KilledHuman_02', 'GOD_KilledHuman_03', 'GOD_KilledHuman_04', 'GOD_KilledHuman_05', 'GOD_KilledHuman_06', 'GOD_KilledHuman_07', 'GOD_KilledHuman_08', 'GOD_KilledHuman_09', 'GOD_KilledHuman_10', 'GOD_KilledHuman_11', 'GOD_KilledHuman_12', 'GOD_KilledHuman_13', 'GOD_KilledHuman_14' ]
+    this.hitSounds = ['GOD_HitHuman_01', 'GOD_HitHuman_02', 'GOD_HitHuman_03', 'GOD_HitHuman_04', 'GOD_HitHuman_05', 'GOD_HitHuman_06', 'GOD_HitHuman_07' ]
+
     this.waveController = options.waveController
 
     this.thunderAction = options.thunderAction
@@ -18,25 +22,42 @@ export default class GodBehaviour extends Behaviour {
 
   onAction (target, clickPoint) {
     if (this.thunderAction.isAvailable) {
-      playSound(['GOD_Attack1_alt1', 'GOD_Attack1_alt2', 'GOD_Attack1_alt3'])
-      // playSound(['GOD_HitHuman_01', 'GOD_HitHuman_02', 'GOD_HitHuman_03', 'GOD_HitHuman_04', 'GOD_HitHuman_05', 'GOD_HitHuman_06', 'GOD_HitHuman_07' ])
-      playSound(['GOD_KilledHuman_01', 'GOD_KilledHuman_02', 'GOD_KilledHuman_03', 'GOD_KilledHuman_04', 'GOD_KilledHuman_05', 'GOD_KilledHuman_06', 'GOD_KilledHuman_07', 'GOD_KilledHuman_08', 'GOD_KilledHuman_09', 'GOD_KilledHuman_10', 'GOD_KilledHuman_11', 'GOD_KilledHuman_12', 'GOD_KilledHuman_13', 'GOD_KilledHuman_14' ])
+      playSound(this.thunderSounds)
 
       this.thunderAction.getEntity().emit('use')
 
       var thunder = new Thunder
+        , killed = false
 
       if (target instanceof Prayer) {
-        target.behaviour.detach()
+        target.behaviour.hp--;
+        if (target.behaviour.hp <= 0) {
+          target.behaviour.detach()
+          killed = true
+        }
         thunder.x = target.x
         thunder.y = target.y
 
       } else {
         for (var i=0; i<target.prayers.length; i++) {
-          target.prayers[i].detach()
-          thunder.x = target.prayers[i].x
-          thunder.y = target.prayers[i].y
+          let prayerBehaviour = target.prayers[i]
+          prayerBehaviour.hp--;
+
+          if (prayerBehaviour.hp <= 0) {
+            prayerBehaviour.detach()
+            killed = true
+          }
+
+          thunder.x = prayerBehaviour.x
+          thunder.y = prayerBehaviour.y
         }
+      }
+
+      console.log("killed?", killed)
+      if (killed) {
+        playSound(this.killSounds)
+      } else {
+        playSound(this.hitSounds)
       }
 
       thunder.x = target.x

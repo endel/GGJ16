@@ -21,6 +21,16 @@ export default class God extends PIXI.Container {
     this.damage.y -= 110
     // this.addChild(this.damage)
 
+    this.lost = new PIXI.Sprite.fromImage('jesus4.png')
+    this.lost.x -= 40
+    this.lost.y -= 110
+    // this.addChild(this.lost)
+
+    this.sleeping = new PIXI.Sprite.fromImage('jesus5.png')
+    this.sleeping.x -= 40
+    this.sleeping.y -= 110
+    // this.addChild(this.sleeping)
+
     this.setFace('serious')
   }
 
