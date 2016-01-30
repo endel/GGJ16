@@ -1,5 +1,3 @@
-import Progress from './Progress'
-
 import SpellButtonBehaviour from '../../behaviours/entities/SpellButtonBehaviour'
 
 export default class SpellButton extends PIXI.Container {

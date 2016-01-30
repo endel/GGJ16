@@ -4,6 +4,7 @@ import Prayer from '../../entities/Prayer'
 import PrayerBehaviour from '../entities/PrayerBehaviour'
 
 var waves = require('../../../config/waves.json')
+var prayerTypes = require('../../../config/prayers.json')
 
 export default class WaveController extends Behaviour {
 
@@ -14,6 +15,7 @@ export default class WaveController extends Behaviour {
     this.god = options.god
     this.prayers = []
 
+    this.notification = options.notification
     this.progress = options.progress
 
     this.on('start', this.onStart.bind(this))
@@ -21,6 +23,7 @@ export default class WaveController extends Behaviour {
   }
 
   onStart () {
+    playSound(['GOD_FB__NewWaveStarted', 'GOD_FB__NewWaveStarted2'])
     var numIntervals = this.waveConfig.intervals.length
     this.object.slots = this.waveConfig.slots
 
@@ -37,7 +40,6 @@ export default class WaveController extends Behaviour {
   gotoNextWave () {
     if (this.currentWave < Object.keys(waves).length-1) {
       this.currentWave++
-      playSound(['GOD_FB__NewWaveStarted', 'GOD_FB__NewWaveStarted2'])
     } else {
       // keep stuck on last level, make it more difficult
     }
@@ -52,7 +54,8 @@ export default class WaveController extends Behaviour {
       // TODO: get first random slot
     }
 
-    let prayer = new Prayer(config.prayerType)
+    let prayerType = prayerTypes[config.prayerType]
+      , prayer = new Prayer(config.prayerType)
       , targetSlot = this.object.slots[ config.destinationSlot ]
       , angle = Math.atan2(targetSlot.y - this.object.stone.y, targetSlot.x - this.object.stone.x)
 
@@ -107,7 +110,7 @@ export default class WaveController extends Behaviour {
 
     if (efficiency === 0) efficiency = -0.1
 
-    this.progress.progress += efficiency/1000
+    // this.progress.progress += efficiency/1000
   }
 
   onDetach () {

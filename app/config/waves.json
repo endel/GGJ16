@@ -1,14 +1,14 @@
 {
-  2: {
-    "slots": 3,
+  1: {
+    "slots": 5,
     "intervals": [
       { prayerType: 1, destinationSlot: 0, time: 0, amount: 1, trajectory: 0 },
-      { prayerType: 2, destinationSlot: 1, time: 1, amount: 1, trajectory: 0  },
-      { prayerType: 1, destinationSlot: 2, time: 2, amount: 1, trajectory: 0  },
+      { prayerType: 2, destinationSlot: 0, time: 1, amount: 1, trajectory: 0  },
+      { prayerType: 1, destinationSlot: 0, time: 2, amount: 1, trajectory: 0  },
     ]
   },
 
-  1: {
+  2: {
     "delay": 2,
     "slots": 5,
     "intervals": [

@@ -12,12 +12,10 @@ console.log(require('../config/sound_effects.json'))
 window.sounds = new Howl(require('../config/sound_effects.json'));
 window.music = new Howl(require('../config/music.json'));
 
-sounds.on('load', () => {
-  console.log("Effects loaded")
-})
-music.on('load', () => {
-  console.log("Music loaded")
-})
+window.currentMusic = null
+
+sounds.on('load', () => { console.log("Effects loaded") })
+music.on('load', () => { console.log("Music loaded") })
 
 window.playSound = function(alternatives) {
   if (typeof(alternatives)==="string") {

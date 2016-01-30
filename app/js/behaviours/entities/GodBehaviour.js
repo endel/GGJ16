@@ -7,20 +7,22 @@ export default class GodBehaviour extends Behaviour {
 
   onAttach (options) {
     this.waveController = options.waveController
-    this.action1 = options.action1
-    this.action2 = options.action2
+
+    this.thunderAction = options.thunderAction
+    this.punchAction = options.punchAction
+    this.frozenAction = options.frozenAction
 
     this.interval = clock.setInterval(this.checkStatus.bind(this), 1000)
     this.on('action', this.onAction.bind(this))
   }
 
   onAction (target, clickPoint) {
-    if (this.action1.isAvailable) {
+    if (this.thunderAction.isAvailable) {
       playSound(['GOD_Attack1_alt1', 'GOD_Attack1_alt2', 'GOD_Attack1_alt3'])
       // playSound(['GOD_HitHuman_01', 'GOD_HitHuman_02', 'GOD_HitHuman_03', 'GOD_HitHuman_04', 'GOD_HitHuman_05', 'GOD_HitHuman_06', 'GOD_HitHuman_07' ])
       playSound(['GOD_KilledHuman_01', 'GOD_KilledHuman_02', 'GOD_KilledHuman_03', 'GOD_KilledHuman_04', 'GOD_KilledHuman_05', 'GOD_KilledHuman_06', 'GOD_KilledHuman_07', 'GOD_KilledHuman_08', 'GOD_KilledHuman_09', 'GOD_KilledHuman_10', 'GOD_KilledHuman_11', 'GOD_KilledHuman_12', 'GOD_KilledHuman_13', 'GOD_KilledHuman_14' ])
 
-      this.action1.getEntity().emit('use')
+      this.thunderAction.getEntity().emit('use')
 
       var thunder = new Thunder
 
@@ -53,10 +55,10 @@ export default class GodBehaviour extends Behaviour {
     } else {
       playSound('GOD_FB__0MANAWarning')
 
-      var originX = parseInt(this.action1.x)
+      var originX = parseInt(this.thunderAction.x)
 
       // shake
-      tweener.add(this.action1).
+      tweener.add(this.thunderAction).
         to({ x: originX + 10 }, 80, Tweener.ease.quintOut).
         to({ x: originX - 10 }, 80, Tweener.ease.quintOut).
         to({ x: originX + 10 }, 80, Tweener.ease.quintOut).

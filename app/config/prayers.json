@@ -1,10 +1,12 @@
 {
   1: {
-    "velocity": 1,
-    "efficiency": 1
+    "velocity": 5,
+    "efficiency": 1,
+    "hp": 1
   },
   2: {
-    "velocity": 2,
-    "efficiency": 2
+    "velocity": 5,
+    "efficiency": 2,
+    "hp": 1
   }
 }

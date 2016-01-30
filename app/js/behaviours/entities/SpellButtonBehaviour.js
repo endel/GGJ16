@@ -4,6 +4,7 @@ export default class SpellButtonBehaviour extends Behaviour {
 
   onAttach () {
     this.onUse()
+    this.fillVelocity = 0.5
     this.on('use', this.onUse.bind(this))
   }
 
@@ -12,7 +13,10 @@ export default class SpellButtonBehaviour extends Behaviour {
   }
 
   update () {
-    this.object.cooldownMask.y = Math.max(this.object.cooldownMask.targetY, this.object.cooldownMask.y-1)
+    this.object.cooldownMask.y = Math.max(
+      this.object.cooldownMask.targetY,
+      this.object.cooldownMask.y-this.fillVelocity
+    )
   }
 
   onDetach () {
