@@ -13,18 +13,21 @@ export default class RitualCircle extends PIXI.Container {
     this.stone.pivot.x = this.stone.width / 2
     this.stone.pivot.y = this.stone.height / 2
 
-    this.spotInstances = []
-    this.spots = 4
+    this.slotInstances = []
 
     this.stone.x = width
     this.stone.y = height
     this.addChild(this.stone)
   }
 
-  set spots (num) {
-    for (var i=0; i<this.spotInstances.length; i++) {
+  get slots () {
+    return this.slotInstances
+  }
+
+  set slots (num) {
+    for (var i=0; i<this.slotInstances.length; i++) {
       // remove spot from parent
-      this.spotInstances[i].parent.removeChild(this.spotInstances[i])
+      this.slotInstances[i].parent.removeChild(this.slotInstances[i])
     }
 
     var pointArrayOffset = Math.floor(this.pointArray.length / num)
@@ -37,6 +40,7 @@ export default class RitualCircle extends PIXI.Container {
       spot.pivot.y = spot.height / 2
       spot.x = position.x
       spot.y = position.y
+      this.slotInstances.push(spot)
       this.addChild(spot)
     }
   }

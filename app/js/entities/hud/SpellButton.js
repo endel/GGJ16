@@ -8,8 +8,8 @@ export default class SpellButton extends PIXI.Container {
     this.active = new PIXI.Sprite.fromImage(id + '.png')
     this.addChild(this.active)
 
-    this.cooldown = new Progress()
-    this.addChild(this.cooldown)
+    // this.cooldown = new Progress()
+    // this.addChild(this.cooldown)
   }
 
 }

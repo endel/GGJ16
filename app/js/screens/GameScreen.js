@@ -3,6 +3,9 @@ import TitleScreen from './TitleScreen'
 import SpellButton from '../entities/hud/SpellButton'
 import RitualCircle from '../entities/RitualCircle'
 
+import WaveController from '../behaviours/controllers/WaveController'
+import Progress from '../entities/hud/Progress'
+
 var HUD_MARGIN = 8
 
 export default class GameScreen extends PIXI.Container {
@@ -27,12 +30,15 @@ export default class GameScreen extends PIXI.Container {
     this.god.pivot.y = this.god.height / 2
     this.addChild(this.god)
 
+    this.progress = new Progress()
+    this.progress.y = 300
+    this.addChild(this.progress)
+
     this.ritualCircle = new RitualCircle()
+    this.ritualCircle.addBehaviour(new WaveController, this.progress)
     this.ritualCircle.pivot.x = this.ritualCircle.width / 2
     this.ritualCircle.pivot.y = this.ritualCircle.height / 2
     this.addChild(this.ritualCircle)
-
-    this.currentWave = 1
 
     window.addEventListener('resize', this.onResize.bind(this))
     this.onResize()

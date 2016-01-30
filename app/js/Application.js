@@ -16,6 +16,7 @@ export default class Application {
       resolution: window.devicePixelRatio,
       // antialias: false,
     })
+    this.renderer.backgroundColor = 0xffffff
     document.body.appendChild(this.renderer.view)
 
     this.sceneManager = new SceneManager()
@@ -31,7 +32,6 @@ export default class Application {
   onResize (e) {
     this.renderer.view.width = window.innerWidth
     this.renderer.view.height = window.innerHeight
-
   }
 
   update () {
