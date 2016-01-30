@@ -2,7 +2,6 @@ import GameScreen from './GameScreen'
 
 import PresentationScreen from './PresentationScreen'
 
-import ButtonBehaviour from '../behaviours/ui/ButtonBehaviour'
 import ParticleExplosion from '../behaviours/particles/Explosion'
 
 export default class TitleScreen extends PIXI.Container {
@@ -17,9 +16,9 @@ export default class TitleScreen extends PIXI.Container {
     this.addChild(title)
 
     var start = new PIXI.Text("START", {font : '24px Arial', fill : 0xff1010, align : 'center'})
+    start.interactive = true
     start.x = window.innerWidth / 2
     start.pivot.set( start.width / 2, start.height / 2 )
-    start.addBehaviour(new ButtonBehaviour)
     start.y += 100
     start.on('click', this.onStartClick.bind(this))
     this.addChild(start)

@@ -15,7 +15,7 @@
 		},
 		"particle-blood.png":
 		{
-			"frame": {"x":932,"y":243,"w":4,"h":4},
+			"frame": {"x":932,"y":485,"w":4,"h":4},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":4,"h":4},
@@ -45,25 +45,17 @@
 			"spriteSourceSize": {"x":0,"y":0,"w":320,"h":240},
 			"sourceSize": {"w":320,"h":240}
 		},
-		"power-3.png":
+		"presentation-4.png":
 		{
-			"frame": {"x":645,"y":243,"w":48,"h":48},
+			"frame": {"x":645,"y":243,"w":320,"h":240},
 			"rotated": false,
 			"trimmed": false,
-			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
-			"sourceSize": {"w":48,"h":48}
+			"spriteSourceSize": {"x":0,"y":0,"w":320,"h":240},
+			"sourceSize": {"w":320,"h":240}
 		},
-		"power-4.png":
+		"power-2.png":
 		{
-			"frame": {"x":695,"y":243,"w":48,"h":48},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
-			"sourceSize": {"w":48,"h":48}
-		},
-		"power-1.png":
-		{
-			"frame": {"x":745,"y":243,"w":48,"h":48},
+			"frame": {"x":645,"y":485,"w":48,"h":48},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
@@ -71,47 +63,47 @@
 		},
 		"center-stone.png":
 		{
-			"frame": {"x":795,"y":243,"w":48,"h":48},
+			"frame": {"x":695,"y":485,"w":48,"h":48},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
 			"sourceSize": {"w":48,"h":48}
 		},
-		"presentation-4.png":
+		"power-1.png":
 		{
-			"frame": {"x":323,"y":1,"w":320,"h":240},
+			"frame": {"x":745,"y":485,"w":48,"h":48},
 			"rotated": false,
 			"trimmed": false,
-			"spriteSourceSize": {"x":0,"y":0,"w":320,"h":240},
-			"sourceSize": {"w":320,"h":240}
+			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
+			"sourceSize": {"w":48,"h":48}
+		},
+		"game-over.png":
+		{
+			"frame": {"x":323,"y":1,"w":320,"h":320},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":320,"h":320},
+			"sourceSize": {"w":320,"h":320}
+		},
+		"power-4.png":
+		{
+			"frame": {"x":845,"y":485,"w":48,"h":48},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
+			"sourceSize": {"w":48,"h":48}
 		},
 		"enemy-spot.png":
 		{
-			"frame": {"x":895,"y":243,"w":35,"h":30},
+			"frame": {"x":895,"y":485,"w":35,"h":30},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":35,"h":30},
 			"sourceSize": {"w":35,"h":30}
 		},
-		"blood.png":
-		{
-			"frame": {"x":645,"y":293,"w":32,"h":32},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
-			"sourceSize": {"w":32,"h":32}
-		},
-		"enemy-step-0.png":
-		{
-			"frame": {"x":679,"y":293,"w":32,"h":32},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
-			"sourceSize": {"w":32,"h":32}
-		},
 		"enemy-step-1.png":
 		{
-			"frame": {"x":713,"y":293,"w":32,"h":32},
+			"frame": {"x":1,"y":565,"w":32,"h":32},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -119,15 +111,15 @@
 		},
 		"enemy-dead.png":
 		{
-			"frame": {"x":747,"y":293,"w":32,"h":32},
+			"frame": {"x":35,"y":565,"w":32,"h":32},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
 			"sourceSize": {"w":32,"h":32}
 		},
-		"enemy-praying-0.png":
+		"enemy-step-0.png":
 		{
-			"frame": {"x":781,"y":293,"w":32,"h":32},
+			"frame": {"x":69,"y":565,"w":32,"h":32},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -135,15 +127,31 @@
 		},
 		"enemy-praying-1.png":
 		{
-			"frame": {"x":815,"y":293,"w":32,"h":32},
+			"frame": {"x":103,"y":565,"w":32,"h":32},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
 			"sourceSize": {"w":32,"h":32}
 		},
-		"power-2.png":
+		"enemy-praying-0.png":
 		{
-			"frame": {"x":845,"y":243,"w":48,"h":48},
+			"frame": {"x":137,"y":565,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"blood.png":
+		{
+			"frame": {"x":171,"y":565,"w":32,"h":32},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+			"sourceSize": {"w":32,"h":32}
+		},
+		"power-3.png":
+		{
+			"frame": {"x":795,"y":485,"w":48,"h":48},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},

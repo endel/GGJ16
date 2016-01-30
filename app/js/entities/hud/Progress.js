@@ -19,7 +19,9 @@ export default class Progress extends PIXI.Container {
   }
 
   set progress (percent) {
-    this.fill.scale.x = Math.max(percent, 0)
-    // console.log(this.fill.scale.x)
+    this.fill.scale.x = Math.min(Math.max(percent, 0), 1)
+    if (this.fill.scale.x === 1) {
+      this.emit('gameover')
+    }
   }
 }

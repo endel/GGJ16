@@ -9,6 +9,8 @@ export default class WaveController extends Behaviour {
 
   onAttach (progress) {
     this.currentWave = 1
+    this.activePrayers = 0
+
     this.prayers = []
     this.progress = progress
 
@@ -18,15 +20,12 @@ export default class WaveController extends Behaviour {
 
   onStart () {
     var numIntervals = this.waveConfig.intervals.length
-      , waveTimeDelay = this.waveConfig.intervals.sort((a,b) => b.time - a.time)[0].time + (this.nextWaveConfig.delay || 0)
-
     this.object.slots = this.waveConfig.slots
+
     for (var i=0; i<numIntervals; i++) {
       let interval = this.waveConfig.intervals[i]
       clock.setTimeout( this.spawn.bind(this, interval), interval.time * 1000 )
     }
-
-    clock.setTimeout( this.gotoNextWave.bind(this), waveTimeDelay * 1000 )
   }
 
   gotoNextWave () {
@@ -47,18 +46,28 @@ export default class WaveController extends Behaviour {
       let prayer = new Prayer
         , targetSlot = this.object.slots[ config.destinationSlot ]
         , angle = Math.atan2(targetSlot.y - this.object.stone.y, targetSlot.x - this.object.stone.x)
+        , prayerBehaviour = new PrayerBehaviour
         // TODO: evaluate 'config.trajectory' instead of using 'angle'
 
-        prayer.addBehaviour(new PrayerBehaviour, {
-          type: config.prayerType,
-          targetSlot: targetSlot,
-          angle: angle
-        }, this)
+      prayer.addBehaviour(prayerBehaviour, {
+        type: config.prayerType,
+        targetSlot: targetSlot,
+        angle: angle
+      }, this)
+      prayerBehaviour.on('detach', this.onPrayerKilled.bind(this, prayer))
 
+      this.activePrayers++
       this.object.addChild(prayer)
     }
 
     // console.log(config.comes)
+  }
+
+  onPrayerKilled () {
+    this.activePrayers--
+    if (this.activePrayers === 0) {
+      clock.setTimeout( this.gotoNextWave.bind(this), (this.nextWaveConfig.delay || 0) * 1000 )
+    }
   }
 
   get nextWaveConfig () {
@@ -86,4 +95,3 @@ export default class WaveController extends Behaviour {
   }
 
 }
-

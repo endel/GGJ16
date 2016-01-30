@@ -9,7 +9,7 @@
   },
 
   2: {
-    "delay": 15,
+    "delay": 2,
     "slots": 5,
     "intervals": [
       { prayerType: 1, destinationSlot: 0, time: 0, amount: 1, trajectory: 0 },
@@ -19,7 +19,7 @@
   },
 
   3: {
-    "delay": 15,
+    "delay": 3,
     "slots": 5,
     "intervals": [
       { prayerType: 1, destinationSlot: 0, time: 0, amount: 1, trajectory: 0 },

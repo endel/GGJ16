@@ -1,4 +1,5 @@
 import TitleScreen from './TitleScreen'
+import GameOverScreen from './GameOverScreen'
 
 import SpellButton from '../entities/hud/SpellButton'
 import RitualCircle from '../entities/RitualCircle'
@@ -32,6 +33,7 @@ export default class GameScreen extends PIXI.Container {
 
     this.progress = new Progress()
     this.progress.y = 300
+    this.progress.once('gameover', () => this.emit('goto', GameOverScreen))
     this.addChild(this.progress)
 
     this.ritualCircle = new RitualCircle()
