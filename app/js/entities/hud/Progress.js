@@ -1,15 +1,21 @@
 export default class Progress extends PIXI.Container {
   constructor () {
     super()
+
+    this.bg = new PIXI.Sprite.fromImage('faixa1.png')
+    this.addChild(this.bg)
+
     this.background = new PIXI.Graphics();
     this.background.beginFill(0x000000)
-    this.background.drawRect(0, 0, window.innerWidth, 10)
-    this.addChild(this.background)
+    this.background.drawRect(0, 0, this.bg.width, 10)
+    this.background.position.y = this.bg.height / 2
+    // this.addChild(this.background)
 
     this.fill = new PIXI.Graphics();
     this.fill.beginFill(0xff0000)
-    this.fill.drawRect(0, 0, window.innerWidth, 10)
-    this.addChild(this.fill)
+    this.fill.drawRect(0, 0, this.bg.width, 10)
+    this.fill.position.y = this.bg.height / 2
+    // this.addChild(this.fill)
 
     this.progress = 0
   }

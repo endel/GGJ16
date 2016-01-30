@@ -24,6 +24,10 @@ export default class PrayerBehaviour extends Behaviour {
     this.object.x = this.originPoint.x
     this.object.y = this.originPoint.y
 
+    if (this.object.x + this.object.width > this.object.parent.width / 2) {
+      this.object.scale.x *= -1
+    }
+
     tweener.add(this.object).from({ alpha: 0 }, 600, Tweener.ease.quintOut)
 
     this.object.addChild(this.object.walking)

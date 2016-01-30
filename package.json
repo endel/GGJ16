@@ -44,6 +44,7 @@
   "dependencies": {
     "behaviour.js": "^0.2.3",
     "clock-timer.js": "^1.0.0",
+    "gh-pages": "^0.9.0",
     "gsap": "^1.18.2",
     "howler": "^1.1.29",
     "pixi-particles": "^1.5.1",

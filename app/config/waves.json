@@ -1,5 +1,5 @@
 {
-  1: {
+  2: {
     "slots": 3,
     "intervals": [
       { prayerType: 1, destinationSlot: 0, time: 0, amount: 1, trajectory: 0 },
@@ -8,7 +8,7 @@
     ]
   },
 
-  2: {
+  1: {
     "delay": 2,
     "slots": 5,
     "intervals": [
@@ -28,4 +28,3 @@
     ]
   }
 }
-

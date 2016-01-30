@@ -1,7 +1,10 @@
 export default class SceneManager extends PIXI.Container {
 
-  constructor () {
+  constructor (ratio) {
     super()
+
+    this.scale.x = ratio
+    this.scale.y = ratio
 
     this.currentScene = null
     this.nextScene = null
@@ -14,6 +17,7 @@ export default class SceneManager extends PIXI.Container {
 
     if (!this.sceneInstanceMap[ screenName ]) {
       this.sceneInstanceMap[ screenName ] = new screenClass
+
       this.bindEvents( this.sceneInstanceMap[ screenName ] )
     }
 

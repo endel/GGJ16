@@ -5,7 +5,7 @@ export default class Spot extends PIXI.Sprite {
 
     this.interactive = true
     this.pivot.x = this.width / 2
-    this.pivot.y = this.height / 2
+    this.pivot.y = this.height
 
     this.prayers = []
   }

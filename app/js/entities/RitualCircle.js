@@ -3,15 +3,18 @@ import { getCircPointArray } from '../utils/circle'
 import Spot from './Spot'
 
 export default class RitualCircle extends PIXI.Container {
-  constructor () {
+
+  constructor (god) {
     super()
+
     var width = 150
       , height = 100
       , rad = 150
 
+    this.god = god
     this.pointArray = getCircPointArray(width, height, rad, 1)
 
-    this.stone = new PIXI.Sprite.fromImage('center-stone.png')
+    this.stone = new PIXI.Sprite.fromImage('cabine.png')
     this.stone.pivot.x = this.stone.width / 2
     this.stone.pivot.y = this.stone.height / 2
 
@@ -50,11 +53,8 @@ export default class RitualCircle extends PIXI.Container {
   }
 
   onAction (spot, e) {
-    for (var i=0; i<spot.prayers.length; i++) {
-      spot.prayers[i].detach()
-    }
-
-    console.log("Action!", spot)
+    this.god.getEntity().emit('action', spot, e.data.global)
+    console.log("Action on spot!", spot)
   }
 
   resize () {

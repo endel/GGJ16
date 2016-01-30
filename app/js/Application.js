@@ -9,29 +9,43 @@ import Tweener from 'tweener'
 window.Tweener = Tweener
 window.tweener = new Tweener();
 
+window.SCALE_RATIO = 1
+
 export default class Application {
 
   constructor () {
-    this.renderer = new PIXI.WebGLRenderer(window.innerWidth, window.innerHeight, {
-      resolution: window.devicePixelRatio,
+    this.tmpBackground = new PIXI.Sprite.fromImage('images/background.png')
+
+    var ratio = window.innerHeight / this.tmpBackground.height
+      , width = this.tmpBackground.width * ratio
+      , height = this.tmpBackground.height * ratio
+
+    SCALE_RATIO = ratio
+
+    this.renderer = new PIXI.WebGLRenderer(width, height, {
+      // resolution: window.devicePixelRatio,
       // antialias: false,
     })
     this.renderer.backgroundColor = 0xffffff
     document.body.appendChild(this.renderer.view)
 
-    this.sceneManager = new SceneManager()
-    this.componentSystem = createComponentSystem(PIXI.DisplayObject)
+    this.sceneManager = new SceneManager(ratio)
+    this.renderer.view.width = width
+    this.renderer.view.height = height
 
-    window.addEventListener('resize', this.onResize.bind(this))
+    this.componentSystem = createComponentSystem(PIXI.DisplayObject)
+  }
+
+  get width () {
+    return this.tmpBackground.width
+  }
+
+  get height () {
+    return this.tmpBackground.height
   }
 
   gotoScene (sceneClass) {
     this.sceneManager.goTo(sceneClass)
-  }
-
-  onResize (e) {
-    this.renderer.view.width = window.innerWidth
-    this.renderer.view.height = window.innerHeight
   }
 
   update () {

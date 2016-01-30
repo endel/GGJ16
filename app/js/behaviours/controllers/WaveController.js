@@ -7,12 +7,14 @@ var waves = require('../../../config/waves.json')
 
 export default class WaveController extends Behaviour {
 
-  onAttach (progress) {
+  onAttach (options) {
     this.currentWave = 1
     this.activePrayers = 0
 
+    this.god = options.god
     this.prayers = []
-    this.progress = progress
+
+    this.progress = options.progress
 
     this.on('start', this.onStart.bind(this))
     this.emit('start')
@@ -23,8 +25,12 @@ export default class WaveController extends Behaviour {
     this.object.slots = this.waveConfig.slots
 
     for (var i=0; i<numIntervals; i++) {
-      let interval = this.waveConfig.intervals[i]
-      clock.setTimeout( this.spawn.bind(this, interval), interval.time * 1000 )
+      let intervalConfig = this.waveConfig.intervals[i]
+        , timeouts = (this.waveConfig.intervals[i].time).toString().split(',')
+
+      for (let i=0; i<intervalConfig.amount; i++) {
+        clock.setTimeout( this.spawn.bind(this, intervalConfig), (timeouts[i] || timeouts[0]) * 1000 )
+      }
     }
   }
 
@@ -34,6 +40,9 @@ export default class WaveController extends Behaviour {
     } else {
       // keep stuck on last level, make it more difficult
     }
+
+    console.log("Current wave:", this.currentWave)
+
     this.emit('start')
   }
 
@@ -42,25 +51,32 @@ export default class WaveController extends Behaviour {
       // TODO: get first random slot
     }
 
-    for (let i=0; i<config.amount; i++) {
-      let prayer = new Prayer
-        , targetSlot = this.object.slots[ config.destinationSlot ]
-        , angle = Math.atan2(targetSlot.y - this.object.stone.y, targetSlot.x - this.object.stone.x)
-        , prayerBehaviour = new PrayerBehaviour
-        // TODO: evaluate 'config.trajectory' instead of using 'angle'
+    let prayer = new Prayer(config.prayerType)
+      , targetSlot = this.object.slots[ config.destinationSlot ]
+      , angle = Math.atan2(targetSlot.y - this.object.stone.y, targetSlot.x - this.object.stone.x)
 
-      prayer.addBehaviour(prayerBehaviour, {
-        type: config.prayerType,
-        targetSlot: targetSlot,
-        angle: angle
-      }, this)
-      prayerBehaviour.on('detach', this.onPrayerKilled.bind(this, prayer))
+      // TODO: evaluate 'config.trajectory' instead of using 'angle'
+    prayer.behaviour = new PrayerBehaviour
+    prayer.interactive = true
 
-      this.activePrayers++
-      this.object.addChild(prayer)
-    }
+    prayer.on('click', this.onAction.bind(this, prayer))
+    this.object.addChild(prayer)
 
+    prayer.addBehaviour(prayer.behaviour, {
+      type: config.prayerType,
+      targetSlot: targetSlot,
+      angle: angle
+    }, this)
+    prayer.behaviour.on('detach', this.onPrayerKilled.bind(this, prayer))
+
+    this.activePrayers++
     // console.log(config.comes)
+  }
+
+  onAction (prayer, e) {
+    // debugger
+    this.god.getEntity().emit('action', prayer, e.data.global)
+    console.log("Action!", prayer)
   }
 
   onPrayerKilled () {

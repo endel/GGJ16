@@ -4,6 +4,8 @@
 var fs = require('fs');
 var path = require('path');
 
+var ghpages = require('gh-pages')
+
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
@@ -89,7 +91,8 @@ gulp.task('sprites', function () {
     format: 'json',
     path: 'app/images',
     powerOfTwo: true,
-    padding: 1
+    padding: 1,
+    scale: 0.1
   }, function (err) {
     if (err) throw err;
     console.log('spritesheet successfully generated', arguments);
@@ -169,6 +172,12 @@ gulp.task('wiredep', function () {
     }))
     .pipe(gulp.dest('app'));
 });
+
+gulp.task('ghpages', function() {
+  ghpages.publish(path.join(__dirname, 'dist'), function() {
+    console.log("Completed!")
+  });
+})
 
 gulp.task('build', ['html', 'images', 'fonts', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
