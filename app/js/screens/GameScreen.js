@@ -16,6 +16,7 @@ export default class GameScreen extends PIXI.Container {
 
   constructor () {
     super()
+    music.play('loop', { loop: true })
     this.waveController = new WaveController
 
     this.bg = new PIXI.Sprite.fromImage('images/background.png')
@@ -34,7 +35,7 @@ export default class GameScreen extends PIXI.Container {
     this.god.pivot.x = this.god.width / 2
     this.god.pivot.y = this.god.height / 2
     this.god.x = APP.width / 2
-    this.god.y = this.god.height / 1.2 + HUD_MARGIN
+    this.god.y = this.god.height + HUD_MARGIN * 4
     this.god.addBehaviour(new GodBehaviour, {
       waveController: this.waveController,
       action1: this.action1,
@@ -48,6 +49,7 @@ export default class GameScreen extends PIXI.Container {
     this.progress.x = APP.width / 2
     this.progress.y = this.god.y + this.god.height / 3
     this.progress.once('gameover', () => this.emit('goto', GameOverScreen))
+    this.progress.goUp()
     this.addChild(this.progress)
 
     this.ritualCircle = new RitualCircle(this.god)

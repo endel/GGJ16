@@ -16,6 +16,7 @@ var browserify = require('browserify');
 
 var isDevelopment = (process.env.ENVIRONMENT !== "production");
 var spritesheet = require('spritesheet-js')
+var audiosprite = require('audiosprite')
 
 gulp.task('stylesheet', function () {
   return gulp.src('app/css/main.styl')
@@ -85,6 +86,63 @@ gulp.task('images', ['sprites'], function () {
   return gulp.src('app/images/**/*')
     .pipe(gulp.dest('dist/images'));
 });
+
+gulp.task('audio', function() {
+  var files = fs.readdirSync('app/sounds').map(function(f) {
+    return 'app/sounds/' + f;
+  }).filter(function(f) {
+    return f.match(/\.wav$/)
+  });
+
+  var options = {
+    format: 'howler',
+    output: 'dist/sound/sound_effects',
+    path: 'sound',
+    // loop: ['game_background', 'intro_background']
+  };
+
+  audiosprite(files, options, function(err, obj) {
+    if (err) {
+      return console.error(err);
+    }
+    var json = JSON.stringify(obj, null, 2);
+    // console.log( json );
+    fs.writeFile('app/config/sound_effects.json', json);
+  });
+
+  options.output = '.tmp/sound/sound_effects';
+  audiosprite(files, options, function(err, obj) {
+    if (err) { return console.error(err); }
+  });
+
+  // loop
+  var files = fs.readdirSync('app/sounds/music').map(function(f) {
+    return 'app/sounds/music/' + f;
+  }).filter(function(f) {
+    return f.match(/\.mp3/)
+  });
+
+  var options = {
+    format: 'howler',
+    output: 'dist/sound/music',
+    path: 'sound',
+    loop: ['loop', 'title_screen']
+  };
+
+  audiosprite(files, options, function(err, obj) {
+    if (err) {
+      return console.error(err);
+    }
+    var json = JSON.stringify(obj, null, 2);
+    // console.log( json );
+    fs.writeFile('app/config/music.json', json);
+  });
+
+  options.output = '.tmp/sound/music';
+  audiosprite(files, options, function(err, obj) {
+    if (err) { return console.error(err); }
+  });
+})
 
 gulp.task('sprites', function () {
   spritesheet('app/images/sprites/*.png', {

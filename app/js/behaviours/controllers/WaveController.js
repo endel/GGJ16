@@ -37,6 +37,7 @@ export default class WaveController extends Behaviour {
   gotoNextWave () {
     if (this.currentWave < Object.keys(waves).length-1) {
       this.currentWave++
+      playSound(['GOD_FB__NewWaveStarted', 'GOD_FB__NewWaveStarted2'])
     } else {
       // keep stuck on last level, make it more difficult
     }
@@ -75,6 +76,8 @@ export default class WaveController extends Behaviour {
 
   onAction (prayer, e) {
     // debugger
+    // console.log(e.data.global.x, e.data.global.y)
+
     this.god.getEntity().emit('action', prayer, e.data.global)
     console.log("Action!", prayer)
   }

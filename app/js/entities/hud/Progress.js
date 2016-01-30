@@ -20,6 +20,18 @@ export default class Progress extends PIXI.Container {
     this.progress = 0
   }
 
+  goUp () {
+    tweener.add(this).
+      to({ y: this.y-8 }, 1000, Tweener.ease.quintInOut).
+      then(this.goDown.bind(this))
+  }
+
+  goDown () {
+    tweener.add(this).
+      to({ y: this.y+8 }, 1000, Tweener.ease.quintInOut).
+      then(this.goUp.bind(this))
+  }
+
   get progress () {
     return this.fill.scale.x
   }

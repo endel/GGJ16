@@ -15,6 +15,10 @@ export default class Resources {
   // }
 
   static incrementLoader () {
+    document.body.className = "loaded"
+    clock.setTimeout(() => {
+      document.querySelector('.loading').style.display = 'none'
+    }, 500)
     this.onLoadComplete()
   }
 

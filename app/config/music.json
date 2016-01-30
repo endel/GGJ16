@@ -1,0 +1,18 @@
+{
+  "urls": [
+    "sound/music.ogg",
+    "sound/music.m4a",
+    "sound/music.mp3",
+    "sound/music.ac3"
+  ],
+  "sprite": {
+    "loop": [
+      0,
+      59112.01814058957
+    ],
+    "title_screen": [
+      61000,
+      59112.01814058957
+    ]
+  }
+}
