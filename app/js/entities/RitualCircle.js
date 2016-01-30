@@ -1,5 +1,7 @@
 import { getCircPointArray } from '../utils/circle'
 
+import Spot from './Spot'
+
 export default class RitualCircle extends PIXI.Container {
   constructor () {
     super()
@@ -27,22 +29,32 @@ export default class RitualCircle extends PIXI.Container {
   set slots (num) {
     for (var i=0; i<this.slotInstances.length; i++) {
       // remove spot from parent
+      this.slotInstances[i].removeAllListeners()
       this.slotInstances[i].parent.removeChild(this.slotInstances[i])
     }
+    this.slotInstances = []
 
     var pointArrayOffset = Math.floor(this.pointArray.length / num)
 
     for (var i=0; i<num; i++) {
       let position = this.pointArray[ i*pointArrayOffset ]
 
-      let spot = new PIXI.Sprite.fromImage('enemy-spot.png')
-      spot.pivot.x = spot.width / 2
-      spot.pivot.y = spot.height / 2
+      let spot = new Spot
       spot.x = position.x
       spot.y = position.y
+      spot.on('click', this.onAction.bind(this, spot))
+
       this.slotInstances.push(spot)
       this.addChild(spot)
     }
+  }
+
+  onAction (spot, e) {
+    for (var i=0; i<spot.prayers.length; i++) {
+      spot.prayers[i].detach()
+    }
+
+    console.log("Action!", spot)
   }
 
   resize () {

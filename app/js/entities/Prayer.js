@@ -24,6 +24,12 @@ export default class Prayer extends PIXI.Container {
     this.praying.animationSpeed = 0.1
     this.praying.loop = true
     this.praying.play()
+
+    this.dead = new PIXI.extras.MovieClip([
+      PIXI.Texture.fromImage('enemy-dead.png'),
+    ])
+    this.dead.pivot.x = this.dead.width / 2
+    this.dead.pivot.y = this.dead.width / 2
   }
 
 }

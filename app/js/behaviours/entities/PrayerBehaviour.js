@@ -1,5 +1,8 @@
 import { Behaviour } from 'behaviour.js'
 
+import Explosion from '../particles/Explosion'
+import Blood from '../../entities/effects/Blood'
+
 var prayerTypes = require('../../../config/prayers.json')
 
 export default class PrayerBehaviour extends Behaviour {
@@ -50,7 +53,10 @@ export default class PrayerBehaviour extends Behaviour {
 
     if (distance < 5) {
       this.praying = true
+
+      this.targetSlot.prayers.push(this)
       this.waveController.prayers.push(this)
+
       this.object.removeChild(this.object.walking)
       this.object.addChild(this.object.praying)
     }
@@ -60,6 +66,38 @@ export default class PrayerBehaviour extends Behaviour {
   }
 
   onDetach () {
+    if (this.object.walking.parent) {
+      this.object.removeChild(this.object.walking)
+    }
+
+    if (this.object.praying) {
+      this.object.removeChild(this.object.praying)
+    }
+
+    // remove prayer from slot
+    let prayerSlotIndex = this.targetSlot.prayers.indexOf(this)
+    if (prayerSlotIndex >= 0) {
+      this.targetSlot.prayers.splice(this.targetSlot.prayers.indexOf(this), 1)
+    }
+
+    // remove prayer from wave
+    let prayerWaveIndex = this.waveController.prayers.indexOf(this)
+    if (prayerWaveIndex >= 0) {
+      this.waveController.prayers.splice(this.waveController.prayers.indexOf(this), 1)
+    }
+
+    this.object.addChild(this.object.dead)
+    tweener.add(this.object).to({ alpha: 0 }, 5000, Tweener.ease.quintOut).then(() => {
+      this.object.parent.removeChild(this.object)
+    })
+
+    // blood effect
+    let blood = new Blood
+    blood.position.copy(this.object.position)
+    this.object.parent.addChild(blood)
+
+    this.object.addBehaviour(new Explosion)
+    console.log("Detached! Destroy this entity!")
   }
 
 }

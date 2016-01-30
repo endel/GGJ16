@@ -4,27 +4,27 @@ export default class Explosion extends Behaviour {
 
   onAttach () {
     this.emitter = new cloudkid.Emitter(this.object, [
-      PIXI.Texture.fromImage('character-man-bottom.png')
+      PIXI.Texture.fromImage('particle-blood.png')
     ], {
       "alpha": {
         "start": 0.8,
         "end": 0.1
       },
       "scale": {
-        "start": 10,
-        "end": 1
+        "start": 3,
+        "end": 2
       },
       "color": {
         "start": "fb1010",
         "end": "f5b830"
       },
       "speed": {
-        "start": 200,
-        "end": 100
+        "start": 50,
+        "end": 30
       },
       "startRotation": {
         "min": 0,
-        "max": 360
+        "max": 180
       },
       "rotationSpeed": {
         "min": 0,
@@ -36,7 +36,7 @@ export default class Explosion extends Behaviour {
       },
       "frequency": 0.008,
       // "emitterLifetime": 0.31,
-      "emitterLifetime": 0.5,
+      "emitterLifetime": 0.05,
       "maxParticles": 1000,
       "pos": {
         "x": 0,
@@ -51,7 +51,7 @@ export default class Explosion extends Behaviour {
       }
     })
 
-    this.emitter.updateOwnerPos(window.innerWidth / 2, window.innerHeight / 2);
+    // this.emitter.updateOwnerPos(this.object.x, this.object.y);
     clock.setTimeout(this.detach.bind(this), 1000)
   }
 
