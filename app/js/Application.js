@@ -36,7 +36,7 @@ export default class Application {
 
     if (this.renderer.view.width > window.innerWidth) {
       this.renderer.view.style.position = "absolute"
-      this.renderer.view.style.left = `-${ ((window.innerWidth - this.renderer.view.width) / 2) }px`
+      this.sceneManager.x = (window.innerWidth - this.renderer.view.width) / 2
     }
 
     // this.renderer.view.style.width = `${ratio*(width)}px`
