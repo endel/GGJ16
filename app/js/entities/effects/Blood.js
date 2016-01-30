@@ -5,10 +5,10 @@ export default class Blood extends PIXI.Sprite {
     this.alpha = 0
 
     this.pivot.x = this.width / 2
-    this.pivot.y = this.height / 2
+    this.pivot.y = 0
 
-    this.scale.x = 0.1
-    this.scale.y = 0.1
+    this.scale.x = 0.4
+    this.scale.y = 0.4
 
     this.on('added', this.onAdded.bind(this))
   }

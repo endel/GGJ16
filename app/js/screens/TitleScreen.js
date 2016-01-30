@@ -21,6 +21,7 @@ export default class TitleScreen extends PIXI.Container {
     start.pivot.set( start.width / 2, start.height / 2 )
     start.y += 100
     start.on('click', this.onStartClick.bind(this))
+    start.on('touchstart', this.onStartClick.bind(this))
     this.addChild(start)
 
     this.addBehaviour(new ParticleExplosion)

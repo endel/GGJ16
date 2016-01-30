@@ -23,6 +23,7 @@ export default class GameOverScreen extends PIXI.Container {
     retry.y = APP.height / 2 + 200
     retry.pivot.set( retry.width / 2, retry.height / 2 )
     retry.on('click', () => this.emit('goto', GameScreen))
+    retry.on('touchstart', () => this.emit('goto', GameScreen))
     this.addChild(retry)
   }
 

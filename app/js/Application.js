@@ -14,7 +14,7 @@ window.SCALE_RATIO = 1
 export default class Application {
 
   constructor () {
-    this.tmpBackground = new PIXI.Sprite.fromImage('images/background.png')
+    this.tmpBackground = new PIXI.Sprite.fromImage('images/background.jpg')
 
     var ratio = window.innerHeight / this.tmpBackground.height
       , width = this.tmpBackground.width * ratio
@@ -30,8 +30,17 @@ export default class Application {
     document.body.appendChild(this.renderer.view)
 
     this.sceneManager = new SceneManager(ratio)
+
     this.renderer.view.width = width
     this.renderer.view.height = height
+
+    if (this.renderer.view.width > window.innerWidth) {
+      this.renderer.view.style.position = "absolute"
+      this.renderer.view.style.left = `-${ ((window.innerWidth - this.renderer.view.width) / 2) }px`
+    }
+
+    // this.renderer.view.style.width = `${ratio*(width)}px`
+    // this.renderer.view.style.height = `${ratio*(height)}px`
 
     this.componentSystem = createComponentSystem(PIXI.DisplayObject)
   }

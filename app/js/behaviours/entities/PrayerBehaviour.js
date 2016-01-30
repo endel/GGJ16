@@ -107,7 +107,7 @@ export default class PrayerBehaviour extends Behaviour {
       this.waveController.prayers.splice(this.waveController.prayers.indexOf(this), 1)
     }
 
-    this.object.addChild(this.object.dead)
+    // this.object.addChild(this.object.dead)
     tweener.add(this.object).to({ alpha: 0 }, 5000, Tweener.ease.quintOut).then(() => {
       this.object.parent.removeChild(this.object)
     })

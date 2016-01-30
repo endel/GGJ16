@@ -6,25 +6,29 @@ canvas
   margin 0 auto
 
 body
-  text-align center
   background #000
+  overflow hidden
 
   &.loaded
     .loading
       opacity 0
 
   .loading
-    opacity 1
-    position absolute
-    top 0
-    bottom 0
-    right 0
-    left 0
-    margin auto
-    background url(../images/sprites/loader.png) no-repeat
-    width 494px
-    height 351px
+    position relative
     transition opacity 0.5s
+    opacity 1
+    width 100vw
+    height 100vh
+    img
+      position absolute
+      top 0
+      bottom 0
+      right 0
+      left 0
+      margin auto
+      @media only screen and (max-width : 768px)
+        width 180px
+        height auto
 
 @font-face
   font-family 'Berry_Rotunda'

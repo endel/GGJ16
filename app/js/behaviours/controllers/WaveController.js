@@ -28,6 +28,7 @@ export default class WaveController extends Behaviour {
 
   onStart () {
     playSound(this.newWaveSounds)
+      /// set face
 
     var numIntervals = this.waveConfig.intervals.length
     this.object.slots = this.waveConfig.slots
@@ -60,6 +61,8 @@ export default class WaveController extends Behaviour {
       to({ alpha: 0 }, 500, Tweener.ease.quintOut).then(() => {
         console.log("Current wave:", this.currentWave)
         this.emit('start')
+
+        this.god.setFace('retard')
       })
   }
 
@@ -78,6 +81,8 @@ export default class WaveController extends Behaviour {
     prayer.interactive = true
 
     prayer.on('click', this.onAction.bind(this, prayer))
+    prayer.on('touchstart', this.onAction.bind(this, prayer))
+
     this.object.addChild(prayer)
 
     prayer.addBehaviour(prayer.behaviour, {

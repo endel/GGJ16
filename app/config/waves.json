@@ -16,7 +16,7 @@
     "intervals": [
     { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":2},
     { "prayerType":1,"destinationSlot":1,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":0,"trajectory":0},
+    { "prayerType":2,"destinationSlot":2,"time":0,"amount":0,"trajectory":0},
     { "prayerType":1,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
     { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
     ]
@@ -26,10 +26,10 @@
     "delay": 1,
     "intervals": [
     { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":6},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":0,"trajectory":0},
+    { "prayerType":2,"destinationSlot":1,"time":0,"amount":0,"trajectory":0},
     { "prayerType":1,"destinationSlot":2,"time":0,"amount":0,"trajectory":0},
     { "prayerType":1,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
+    { "prayerType":2,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
     ]
   },
   4: {
@@ -39,7 +39,7 @@
     { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":6},
     { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":2},
     { "prayerType":1,"destinationSlot":2,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
+    { "prayerType":2,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
     { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
     ]
   },

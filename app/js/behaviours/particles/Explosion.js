@@ -4,27 +4,27 @@ export default class Explosion extends Behaviour {
 
   onAttach () {
     this.emitter = new cloudkid.Emitter(this.object, [
-      PIXI.Texture.fromImage('particle-blood.png')
+      PIXI.Texture.fromImage('blood.png'),
     ], {
       "alpha": {
         "start": 0.8,
         "end": 0.1
       },
-      "scale": {
-        "start": 3,
-        "end": 2
-      },
+      // "scale": {
+      //   "start": 1,
+      //   "end": 1
+      // },
       "color": {
         "start": "fb1010",
         "end": "f5b830"
       },
       "speed": {
-        "start": 50,
-        "end": 30
+        "start": 150,
+        "end": 90
       },
       "startRotation": {
-        "min": 0,
-        "max": 180
+        "min": 45,
+        "max": 135
       },
       "rotationSpeed": {
         "min": 0,
@@ -36,11 +36,11 @@ export default class Explosion extends Behaviour {
       },
       "frequency": 0.008,
       // "emitterLifetime": 0.31,
-      "emitterLifetime": 0.05,
+      "emitterLifetime": 0.2,
       "maxParticles": 1000,
       "pos": {
         "x": 0,
-        "y": 0
+        "y": -45
       },
       "addAtBack": false,
       "spawnType": "circle",

@@ -20,6 +20,7 @@ export default class RitualCircle extends PIXI.Container {
 
     this.stone.x = width
     this.stone.y = height
+
     this.addChild(this.stone)
   }
 
@@ -37,98 +38,98 @@ export default class RitualCircle extends PIXI.Container {
 
     if (num === 1) {
       let spot = new Spot
-      spot.x = this.width / 2 + 50
-      spot.y = this.height + 80
+      spot.x = this.stone.width / 2 + 50
+      spot.y = this.stone.height + 10
       this.slotInstances.push(spot)
       this.addChild(spot)
 
     } else if (num === 2) {
       let spot = new Spot
-      spot.x = this.width / 2 + 230
-      spot.y = this.height / 2 + 20
+      spot.x = this.stone.width / 2 + 230
+      spot.y = this.stone.height / 2 + 20
       this.slotInstances.push(spot)
       this.addChild(spot)
 
       spot = new Spot
-      spot.x = this.width / 2 - 160
-      spot.y = this.height / 2 + 20
+      spot.x = this.stone.width / 2 - 160
+      spot.y = this.stone.height / 2 + 20
       this.slotInstances.push(spot)
       this.addChild(spot)
 
     } else if (num === 3) {
       let spot = new Spot
-      spot.x = this.width / 2 + 50
-      spot.y = this.height + 80
+      spot.x = this.stone.width / 2 + 50
+      spot.y = this.stone.height + 10
       this.slotInstances.push(spot)
       this.addChild(spot)
 
       spot = new Spot
-      spot.x = this.width / 2 + 230
-      spot.y = this.height / 2 + 20
+      spot.x = this.stone.width / 2 + 230
+      spot.y = this.stone.height / 2 + 20
       this.slotInstances.push(spot)
       this.addChild(spot)
 
       spot = new Spot
-      spot.x = this.width / 2 - 160
-      spot.y = this.height / 2 + 20
+      spot.x = this.stone.width / 2 - 160
+      spot.y = this.stone.height / 2 + 20
       this.slotInstances.push(spot)
       this.addChild(spot)
 
     } else if (num === 4) {
       let spot1 = new Spot
-      spot1.x = this.width / 2 + 230
-      spot1.y = this.height / 2 - 10
+      spot1.x = this.stone.width / 2 + 230
+      spot1.y = this.stone.height / 2 - 20
       this.slotInstances.push(spot1)
       this.addChild(spot1)
 
       let spot2 = new Spot
-      spot2.x = this.width / 2 - 160
-      spot2.y = this.height / 2 - 10
+      spot2.x = this.stone.width / 2 - 160
+      spot2.y = this.stone.height / 2 - 20
       this.slotInstances.push(spot2)
       this.addChild(spot2)
 
       let spot3 = new Spot
       spot3.x = spot1.x
-      spot3.y = this.height / 2 + 80
+      spot3.y = this.stone.height / 2 + 70
       this.slotInstances.push(spot3)
       this.addChild(spot3)
 
       let spot4 = new Spot
       spot4.x = spot2.x
-      spot4.y = this.height / 2 + 80
+      spot4.y = this.stone.height / 2 + 70
       this.slotInstances.push(spot4)
       this.addChild(spot4)
 
     } else if (num === 5) {
       let spot1 = new Spot
-      spot1.x = this.width / 2 + 230
-      spot1.y = this.height / 2 - 20
+      spot1.x = this.stone.width / 2 + 230
+      spot1.y = this.stone.height / 2 - 20
       this.slotInstances.push(spot1)
       this.addChild(spot1)
 
       let spot2 = new Spot
-      spot2.x = this.width / 2 - 160
-      spot2.y = this.height / 2 - 20
+      spot2.x = this.stone.width / 2 - 160
+      spot2.y = this.stone.height / 2 - 20
       this.slotInstances.push(spot2)
       this.addChild(spot2)
 
       let spot3 = new Spot
       spot3.x = spot1.x
-      spot3.y = this.height / 2 + 70
+      spot3.y = this.stone.height / 2 + 70
       this.slotInstances.push(spot3)
       this.addChild(spot3)
 
       let spot4 = new Spot
       spot4.x = spot2.x
-      spot4.y = this.height / 2 + 70
+      spot4.y = this.stone.height / 2 + 70
       this.slotInstances.push(spot4)
       this.addChild(spot4)
 
-      let spot5 = new Spot
-      spot5.x = this.width / 2
-      spot5.y = -10
-      this.slotInstances.push(spot5)
-      this.addChild(spot5)
+      let spot = new Spot
+      spot.x = this.stone.width / 2 + 50
+      spot.y = this.stone.height + 10
+      this.slotInstances.push(spot)
+      this.addChild(spot)
     }
 
     // this.slotInstances.forEach((spot) => {

@@ -16,6 +16,8 @@ export default class GodBehaviour extends Behaviour {
     this.punchAction = options.punchAction
     this.frozenAction = options.frozenAction
 
+    this.killCounter = options.killCounter
+
     this.interval = clock.setInterval(this.checkStatus.bind(this), 1000)
     this.on('action', this.onAction.bind(this))
   }
@@ -32,6 +34,7 @@ export default class GodBehaviour extends Behaviour {
       if (target instanceof Prayer) {
         target.behaviour.hp--;
         if (target.behaviour.hp <= 0) {
+          this.killCounter.increment()
           target.behaviour.detach()
           killed = true
         }
@@ -44,6 +47,7 @@ export default class GodBehaviour extends Behaviour {
           prayerBehaviour.hp--;
 
           if (prayerBehaviour.hp <= 0) {
+            this.killCounter.increment()
             prayerBehaviour.detach()
             killed = true
           }
@@ -53,7 +57,6 @@ export default class GodBehaviour extends Behaviour {
         }
       }
 
-      console.log("killed?", killed)
       if (killed) {
         playSound(this.killSounds)
       } else {
