@@ -1408,6 +1408,12 @@ var Resources = function () {
     value: function load(onLoadComplete) {
       this.onLoadComplete = onLoadComplete;
 
+      this.numLoads = 0;
+      this.filesToLoad = 3;
+
+      sounds.on('load', this.incrementLoader.bind(this));
+      music.on('load', this.incrementLoader.bind(this));
+
       this.loader = new PIXI.loaders.Loader();
       this.loader.add('spritesheet', "images/spritesheet.json");
       this.loader.add('background', "images/background.jpg");
@@ -1423,11 +1429,14 @@ var Resources = function () {
   }, {
     key: 'incrementLoader',
     value: function incrementLoader() {
-      document.body.className = "loaded";
-      clock.setTimeout(function () {
-        document.querySelector('.loading').style.display = 'none';
-      }, 500);
-      this.onLoadComplete();
+      this.numLoads++;
+      if (this.numLoads === this.filesToLoad) {
+        document.body.className = "loaded";
+        clock.setTimeout(function () {
+          document.querySelector('.loading').style.display = 'none';
+        }, 500);
+        this.onLoadComplete();
+      }
     }
   }]);
 
@@ -2621,13 +2630,6 @@ window.sounds = new _howler.Howl(require('../config/sound_effects.json'));
 window.music = new _howler.Howl(require('../config/music.json'));
 
 window.currentMusic = null;
-
-sounds.on('load', function () {
-  console.log("Effects loaded");
-});
-music.on('load', function () {
-  console.log("Music loaded");
-});
 
 var lastSoundPlayed = {};
 window.playSound = function (alternatives) {
