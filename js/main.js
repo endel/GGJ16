@@ -468,44 +468,44 @@ module.exports={
 "slots": 5,
 "delay": 1,
 "intervals": [
-{ prayerType:2,destinationSlot:0,time:"0,1000,2000",amount:3,trajectory:7},
-{ prayerType:2,destinationSlot:1,time:"0,1000,2000",amount:3,trajectory:5},
-{ prayerType:2,destinationSlot:2,time:"0,1000,2000",amount:3,trajectory:4},
-{ prayerType:2,destinationSlot:3,time:"0,1000,2000",amount:3,trajectory:3},
-{ prayerType:2,destinationSlot:4,time:"0,1000,2000",amount:3,trajectory:1},
+{ prayerType:2,destinationSlot:0,time:"0,3000,6500",amount:3,trajectory:7},
+{ prayerType:2,destinationSlot:1,time:"0,3000,6500",amount:3,trajectory:5},
+{ prayerType:2,destinationSlot:2,time:"0,3000,6500",amount:3,trajectory:4},
+{ prayerType:2,destinationSlot:3,time:"0,3000,6500",amount:3,trajectory:3},
+{ prayerType:2,destinationSlot:4,time:"0,3000,6500",amount:3,trajectory:1},
 ]
 },
 18: {
 "slots": 5,
 "delay": 1,
 "intervals": [
-{ prayerType:3,destinationSlot:0,time:"0,1000,2000,3000",amount:4,trajectory:7},
-{ prayerType:3,destinationSlot:1,time:"0,1000,2000,3000",amount:4,trajectory:5},
-{ prayerType:3,destinationSlot:2,time:"0,1000,2000,3000",amount:4,trajectory:4},
-{ prayerType:3,destinationSlot:3,time:"0,1000,2000,3000",amount:4,trajectory:3},
-{ prayerType:3,destinationSlot:4,time:"0,1000,2000,3000",amount:4,trajectory:1},
+{ prayerType:3,destinationSlot:0,time:"0,2500,5000,7500",amount:4,trajectory:7},
+{ prayerType:3,destinationSlot:1,time:"0,2500,5000,7500",amount:4,trajectory:5},
+{ prayerType:3,destinationSlot:2,time:"0,2500,5000,7500",amount:4,trajectory:4},
+{ prayerType:3,destinationSlot:3,time:"0,2500,5000,7500",amount:4,trajectory:3},
+{ prayerType:3,destinationSlot:4,time:"0,2500,5000,7500",amount:4,trajectory:1},
 ]
 },
 19: {
 "slots": 5,
 "delay": 1,
 "intervals": [
-{ prayerType:1,destinationSlot:0,time:"0,500,1000,1500,2000",amount:5,trajectory:7},
-{ prayerType:2,destinationSlot:1,time:"0,500,1000,1500,2000",amount:5,trajectory:5},
-{ prayerType:1,destinationSlot:2,time:"0,500,1000,1500,2000",amount:5,trajectory:4},
-{ prayerType:2,destinationSlot:3,time:"0,500,1000,1500,2000",amount:5,trajectory:3},
-{ prayerType:1,destinationSlot:4,time:"0,500,1000,1500,2000",amount:5,trajectory:1},
+{ prayerType:1,destinationSlot:0,time:"0,2500,5000,7500,10000",amount:5,trajectory:7},
+{ prayerType:2,destinationSlot:1,time:"0,2500,5000,7500,10000",amount:5,trajectory:5},
+{ prayerType:1,destinationSlot:2,time:"0,2500,5000,7500,10000",amount:5,trajectory:4},
+{ prayerType:2,destinationSlot:3,time:"0,2500,5000,7500,10000",amount:5,trajectory:3},
+{ prayerType:1,destinationSlot:4,time:"0,2500,5000,7500,10000",amount:5,trajectory:1},
 ]
 },
 20: {
 "slots": 5,
 "delay": 1,
 "intervals": [
-{ prayerType:3,destinationSlot:0,time:"0,300,600,900,1000,1200",amount:6,trajectory:7},
-{ prayerType:2,destinationSlot:1,time:"0,300,600,900,1000,1200",amount:6,trajectory:5},
-{ prayerType:3,destinationSlot:2,time:"0,300,600,900,1000,1200",amount:6,trajectory:4},
-{ prayerType:2,destinationSlot:3,time:"0,300,600,900,1000,1200",amount:6,trajectory:3},
-{ prayerType:1,destinationSlot:4,time:"0,300,600,900,1000,1200",amount:6,trajectory:1},
+{ prayerType:3,destinationSlot:0,time:"0,2500,5000,7500,10000,12000",amount:6,trajectory:7},
+{ prayerType:2,destinationSlot:1,time:"0,2500,5000,7500,10000,12000",amount:6,trajectory:5},
+{ prayerType:3,destinationSlot:2,time:"0,2500,5000,7500,10000,12000",amount:6,trajectory:4},
+{ prayerType:2,destinationSlot:3,time:"0,2500,5000,7500,10000,12000",amount:6,trajectory:3},
+{ prayerType:1,destinationSlot:4,time:"0,2500,5000,7500,10000,12000",amount:6,trajectory:1},
 ]
 }
 }
