@@ -19,14 +19,17 @@ export default class ThunderSpellButton extends PIXI.Container {
     this.cooldownMask.drawCircle(0, 0, this.cooldown.height)
     this.cooldownMask.x = this.cooldownMask.width / 3
     this.cooldownMask.targetY = this.cooldownMask.height / 2.1
-    this.cooldownMask.y = this.initY
+    this.cooldownMask.y = this.cooldownMask.targetY
+    // this.cooldownMask.y = this.initY
     this.addChild(this.cooldownMask)
 
     this.cooldown.mask = this.cooldownMask
 
-    this.fillVelocity = 0.009
-    this.usageBurn = 30
+    this.fillVelocity = 0.02
+    this.usageBurn = 15
+  }
 
+  init () {
     this.addBehaviour(new SpellButtonBehaviour, this.fillVelocity, this.usageBurn)
   }
 

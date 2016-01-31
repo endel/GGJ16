@@ -27,7 +27,6 @@ export default class WaveController extends Behaviour {
 
   onStart () {
     playSound(this.newWaveSounds)
-      /// set face
 
     var numIntervals = this.waveConfig.intervals.length
     this.object.slots = this.waveConfig.slots
@@ -36,10 +35,12 @@ export default class WaveController extends Behaviour {
       let intervalConfig = this.waveConfig.intervals[i]
         , timeouts = (this.waveConfig.intervals[i].time).toString().split(',')
 
+      this.activePrayers += intervalConfig.amount;
       for (let i=0; i<intervalConfig.amount; i++) {
-        clock.setTimeout( this.spawn.bind(this, intervalConfig), (timeouts[i] || timeouts[0]) * 1000 )
+        clock.setTimeout( this.spawn.bind(this, intervalConfig), (timeouts[i] || timeouts[0]) )
       }
     }
+    console.log(this.activePrayers)
   }
 
   gotoNextWave () {
@@ -49,9 +50,11 @@ export default class WaveController extends Behaviour {
       // keep stuck on last level, make it more difficult
     }
 
+    console.log("Current wave:", this.currentWave)
+
     var textbox = new Textbox(`Wave ${ this.currentWave }`)
     textbox.x = APP.width / 2
-    textbox.y = APP.height / 2 - 80
+    textbox.y = textbox.height / 2
     this.object.parent.addChild(textbox)
 
     tweener.add(textbox).
@@ -61,7 +64,7 @@ export default class WaveController extends Behaviour {
         console.log("Current wave:", this.currentWave)
         this.emit('start')
 
-        this.god.setFace('retard')
+        this.god.getEntity().emit('face', 'retard')
       })
   }
 
@@ -89,9 +92,7 @@ export default class WaveController extends Behaviour {
       targetSlot: targetSlot,
       angle: angle
     }, this)
-    prayer.behaviour.on('detach', this.onPrayerKilled.bind(this, prayer))
-
-    this.activePrayers++;
+    prayer.behaviour.once('detach', this.onPrayerKilled.bind(this, prayer))
 
     //
     // sort ritual container children
@@ -103,7 +104,6 @@ export default class WaveController extends Behaviour {
 
   onAction (prayer, e) {
     this.god.getEntity().emit('action', prayer, e.data.global)
-    console.log("Action!", prayer)
   }
 
   onPrayerKilled () {

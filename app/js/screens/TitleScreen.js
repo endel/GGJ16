@@ -1,7 +1,5 @@
 import GameScreen from './GameScreen'
 
-import PresentationScreen from './PresentationScreen'
-
 import ParticleExplosion from '../behaviours/particles/Explosion'
 
 export default class TitleScreen extends PIXI.Container {
@@ -20,8 +18,8 @@ export default class TitleScreen extends PIXI.Container {
     start.x = APP.width / 2
     start.pivot.set( start.width / 2, start.height / 2 )
     start.y += 100
-    start.on('click', this.onStartClick.bind(this))
-    start.on('touchstart', this.onStartClick.bind(this))
+    // start.on('click', this.onStartClick.bind(this))
+    // start.on('touchstart', this.onStartClick.bind(this))
     this.addChild(start)
 
     this.addBehaviour(new ParticleExplosion)
@@ -30,10 +28,6 @@ export default class TitleScreen extends PIXI.Container {
   }
 
   onDispose () {
-  }
-
-  onStartClick (e) {
-    this.emit('goto', PresentationScreen)
   }
 
 }

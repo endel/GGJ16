@@ -14,17 +14,28 @@ export default class GodBehaviour extends Behaviour {
     this.waveController = options.waveController
 
     this.thunderAction = options.thunderAction
+    this.thunderAction.init()
     this.punchAction = options.punchAction
+    this.punchAction.init()
     this.frozenAction = options.frozenAction
+    this.frozenAction.init()
 
-    this.killCounter = options.killCounter
+    this.notification = options.notification
 
     this.punchAction.interactive = true
+    this.punchAction.on('mouseover', this.onPunchMouseOver.bind(this))
+    this.punchAction.on('mouseout', this.onPunchMouseOut.bind(this))
     this.punchAction.on('click', this.onPunchAction.bind(this))
     this.punchAction.on('touchstart', this.onPunchAction.bind(this))
 
     this.interval = clock.setInterval(this.checkStatus.bind(this), 1000)
     this.on('action', this.onThunderAction.bind(this))
+    this.on('face', this.setFace.bind(this))
+  }
+
+  setFace (face) {
+    this.object.setFace(face)
+    this.interval.elapsedTime = 0
   }
 
   onThunderAction (target, clickPoint) {
@@ -39,7 +50,7 @@ export default class GodBehaviour extends Behaviour {
       if (target instanceof Prayer) {
         target.behaviour.hp--;
         if (target.behaviour.hp <= 0) {
-          this.killCounter.increment()
+          this.notification.incrementKill()
           target.behaviour.detach()
           killed = true
         }
@@ -52,7 +63,7 @@ export default class GodBehaviour extends Behaviour {
           prayerBehaviour.hp--;
 
           if (prayerBehaviour.hp <= 0) {
-            this.killCounter.increment()
+            this.notification.incrementKill()
             prayerBehaviour.detach()
             killed = true
           }
@@ -73,8 +84,16 @@ export default class GodBehaviour extends Behaviour {
       thunder.y = target.y
       this.object.parent.addChild(thunder)
 
+      //
+      // Update attack face
+      //
       this.object.face.rotation = 0
-      this.object.setFace('attack')
+      var attackVariations = ['attack', 'attack2', 'attack3', 'attack4']
+      do {
+        i = Math.floor(Math.random() * attackVariations.length)
+      } while (i === this.lastAttackVariation)
+      this.lastAttackVariation = i
+      this.object.setFace(attackVariations[i])
       this.interval.elapsedTime = 0
 
       tweener.remove(this.object.face)
@@ -114,13 +133,14 @@ export default class GodBehaviour extends Behaviour {
             prayer.hp -= 5
             if (prayer.hp <= 0) {
               killed = true
-              this.killCounter.increment()
+              this.notification.incrementKill()
               prayer.detach()
             }
           })
         }
 
         if (killed) {
+          playSound('GOD_Attack2_FINISH')
           playSound(this.killSmashSounds)
         }
       })
@@ -144,8 +164,28 @@ export default class GodBehaviour extends Behaviour {
 
   }
 
+  onPunchMouseOver () {
+    if (this.punchAction.isAvailable) {
+      this.object.showPreviewPunch()
+    }
+  }
+
+  onPunchMouseOut () {
+    this.object.hidePreviewPunch()
+  }
+
   checkStatus () {
     if (this.waveController.prayers.length > 0 && this.object.currentFace !== 'attack') {
+
+      // set damage face
+      var damageVariations = ['damage', 'damage2']
+        , i = null
+      do {
+        i = Math.floor(Math.random() * damageVariations.length)
+      } while (i === this.lastDamageVariation)
+      this.lastDamageVariation = i
+      this.object.setFace(damageVariations[i])
+
       this.object.setFace('damage')
       tweener.add(this.object.face).
         to({ rotation: -0.1 }, 500, Tweener.ease.bounceOut).
@@ -157,6 +197,8 @@ export default class GodBehaviour extends Behaviour {
   }
 
   update () {
+    this.thunderAction.alpha = (this.thunderAction.isAvailable) ? 1 : 0.4
+    this.punchAction.alpha = (this.punchAction.isAvailable) ? 1 : 0.4
   }
 
   noManaWarning () {

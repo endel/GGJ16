@@ -26,9 +26,10 @@ export default class FrozenSpellButton extends PIXI.Container {
 
     this.fillVelocity = 0.009
     this.usageBurn = 30
+  }
 
+  init () {
     this.addBehaviour(new SpellButtonBehaviour, this.fillVelocity, this.usageBurn)
-
   }
 
   get width () { return this.active.width }

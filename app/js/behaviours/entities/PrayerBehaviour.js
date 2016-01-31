@@ -12,6 +12,7 @@ export default class PrayerBehaviour extends Behaviour {
 
     this.waveController = waveController
     this.attributes = prayerTypes[ config.type ]
+    this.baseVelocity = 5
 
     this._hp = parseInt(this.attributes.hp)
 
@@ -46,7 +47,7 @@ export default class PrayerBehaviour extends Behaviour {
       clock.setTimeout(() => {
         this.stopped = false
         this.object.play()
-      }, 500)
+      }, this.attributes.stuck_time * 1000)
     }
   }
 
@@ -62,8 +63,8 @@ export default class PrayerBehaviour extends Behaviour {
 
   move() {
     var nextPoint = {
-      x: (Math.cos(this.angle) * 0.01 * clock.deltaTime * this.attributes.velocity),
-      y: (Math.sin(this.angle) * 0.01 * clock.deltaTime * this.attributes.velocity)
+      x: (Math.cos(this.angle) * 0.01 * clock.deltaTime * ( this.baseVelocity * this.attributes.velocity )),
+      y: (Math.sin(this.angle) * 0.01 * clock.deltaTime * ( this.baseVelocity * this.attributes.velocity ))
     }
 
     if (nextPoint.x > 0) { this.object.scale.x = -1 }
@@ -96,13 +97,7 @@ export default class PrayerBehaviour extends Behaviour {
   }
 
   onDetach () {
-    if (this.object.walking.parent) {
-      this.object.removeChild(this.object.walking)
-    }
-
-    if (this.object.praying) {
-      this.object.removeChild(this.object.praying)
-    }
+    this.object.removeAllListeners()
 
     // remove prayer from slot
     let prayerSlotIndex = this.targetSlot.prayers.indexOf(this)
@@ -117,7 +112,7 @@ export default class PrayerBehaviour extends Behaviour {
     }
 
     // this.object.addChild(this.object.dead)
-    tweener.add(this.object).to({ alpha: 0 }, 5000, Tweener.ease.quintOut).then(() => {
+    tweener.add(this.object).to({ alpha: 0 }, 300, Tweener.ease.quintOut).then(() => {
       this.object.parent.removeChild(this.object)
     })
 

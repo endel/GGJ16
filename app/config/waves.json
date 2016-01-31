@@ -1,222 +1,222 @@
 {
-  1: {
-    "slots": 1,
-    "delay": 0,
-      "intervals": [
-      { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":4},
-      { "prayerType":1,"destinationSlot":1,"time":0,"amount":0,"trajectory":0},
-      { "prayerType":1,"destinationSlot":2,"time":0,"amount":0,"trajectory":0},
-      { "prayerType":1,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
-      { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  2: {
-    "slots": 1,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":2},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":2,"destinationSlot":2,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  3: {
-    "slots": 1,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":6},
-    { "prayerType":2,"destinationSlot":1,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":2,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  4: {
-    "slots": 2,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":6},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":2},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":2,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  5: {
-    "slots": 2,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":7},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":3},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  6: {
-    "slots": 2,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":4},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":0},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  7: {
-    "slots": 3,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":7},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":4},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":1,"trajectory":1},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  8: {
-    "slots": 3,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":4},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":4},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":1,"trajectory":4},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  9: {
-    "slots": 3,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":5},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":4},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":1,"trajectory":3},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":0,"trajectory":0},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  10: {
-    "slots": 4,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":7},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":5},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":1,"trajectory":3},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":1,"trajectory":1},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  11: {
-    "slots": 4,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":6},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":3},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":1,"trajectory":5},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":1,"trajectory":2},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  12: {
-    "slots": 4,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":7},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":6},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":1,"trajectory":3},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":1,"trajectory":2},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  13: {
-    "slots": 4,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":6},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":5},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":1,"trajectory":2},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":1,"trajectory":1},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":0,"trajectory":0},
-    ]
-  },
-  14: {
-    "slots": 5,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":6},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":3},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":1,"trajectory":4},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":1,"trajectory":5},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":1,"trajectory":2},
-    ]
-  },
-  15: {
-    "slots": 5,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":0,"amount":1,"trajectory":7},
-    { "prayerType":1,"destinationSlot":1,"time":0,"amount":1,"trajectory":5},
-    { "prayerType":1,"destinationSlot":2,"time":0,"amount":1,"trajectory":4},
-    { "prayerType":1,"destinationSlot":3,"time":0,"amount":1,"trajectory":3},
-    { "prayerType":1,"destinationSlot":4,"time":0,"amount":1,"trajectory":1},
-    ]
-  },
-  16: {
-    "slots": 5,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":"0,1000","amount":2,trajectory:7},
-    { "prayerType":1,"destinationSlot":1,"time":"0,1000","amount":2,trajectory:5},
-    { "prayerType":1,"destinationSlot":2,"time":"0,1000","amount":2,trajectory:4},
-    { "prayerType":1,"destinationSlot":3,"time":"0,1000","amount":2,trajectory:3},
-    { "prayerType":1,"destinationSlot":4,"time":"0,1000","amount":2,trajectory:1},
-    ]
-  },
-  17: {
-    "slots": 5,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":"0,1000,2000",amount:3,trajectory:7},
-    { "prayerType":1,"destinationSlot":1,"time":"0,1000,2000",amount:3,trajectory:5},
-    { "prayerType":1,"destinationSlot":2,"time":"0,1000,2000",amount:3,trajectory:4},
-    { "prayerType":1,"destinationSlot":3,"time":"0,1000,2000",amount:3,trajectory:3},
-    { "prayerType":1,"destinationSlot":4,"time":"0,1000,2000",amount:3,trajectory:1},
-    ]
-  },
-  18: {
-    "slots": 5,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":"0,1000,2000,3000",amount:4,trajectory:7},
-    { "prayerType":1,"destinationSlot":1,"time":"0,1000,2000,3000",amount:4,trajectory:5},
-    { "prayerType":1,"destinationSlot":2,"time":"0,1000,2000,3000",amount:4,trajectory:4},
-    { "prayerType":1,"destinationSlot":3,"time":"0,1000,2000,3000",amount:4,trajectory:3},
-    { "prayerType":1,"destinationSlot":4,"time":"0,1000,2000,3000",amount:4,trajectory:1},
-    ]
-  },
-  19: {
-    "slots": 5,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":"0,500,1000,1500,2000",amount:5,trajectory:7},
-    { "prayerType":1,"destinationSlot":1,"time":"0,500,1000,1500,2000",amount:5,trajectory:5},
-    { "prayerType":1,"destinationSlot":2,"time":"0,500,1000,1500,2000",amount:5,trajectory:4},
-    { "prayerType":1,"destinationSlot":3,"time":"0,500,1000,1500,2000",amount:5,trajectory:3},
-    { "prayerType":1,"destinationSlot":4,"time":"0,500,1000,1500,2000",amount:5,trajectory:1},
-    ]
-  },
-  20: {
-    "slots": 5,
-    "delay": 1,
-    "intervals": [
-    { "prayerType":1,"destinationSlot":0,"time":"0,300,600,900,1000,1200",amount:6,trajectory:7},
-    { "prayerType":1,"destinationSlot":1,"time":"0,300,600,900,1000,1200",amount:6,trajectory:5},
-    { "prayerType":1,"destinationSlot":2,"time":"0,300,600,900,1000,1200",amount:6,trajectory:4},
-    { "prayerType":1,"destinationSlot":3,"time":"0,300,600,900,1000,1200",amount:6,trajectory:3},
-    { "prayerType":1,"destinationSlot":4,"time":"0,300,600,900,1000,1200",amount:6,trajectory:1},
-    ]
-  }
+1: {
+"slots": 1,
+"delay": 0,
+"intervals": [
+{ prayerType:1,destinationSlot:0,time:"0",amount:1,trajectory:6},
+{ prayerType:1,destinationSlot:1,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:2,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:3,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+2: {
+"slots": 1,
+"delay": 1,
+"intervals": [
+{ prayerType:2,destinationSlot:0,time:"0",amount:1,trajectory:2},
+{ prayerType:2,destinationSlot:1,time:"0",amount:0,trajectory:0},
+{ prayerType:2,destinationSlot:2,time:"0",amount:0,trajectory:0},
+{ prayerType:2,destinationSlot:3,time:"0",amount:0,trajectory:0},
+{ prayerType:2,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+3: {
+"slots": 1,
+"delay": 1,
+"intervals": [
+{ prayerType:1,destinationSlot:0,time:"0",amount:1,trajectory:6},
+{ prayerType:1,destinationSlot:1,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:2,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:3,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+4: {
+"slots": 2,
+"delay": 1,
+"intervals": [
+{ prayerType:1,destinationSlot:0,time:"0",amount:1,trajectory:6},
+{ prayerType:2,destinationSlot:1,time:"0",amount:1,trajectory:2},
+{ prayerType:1,destinationSlot:2,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:3,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+5: {
+"slots": 2,
+"delay": 1,
+"intervals": [
+{ prayerType:2,destinationSlot:0,time:"0",amount:1,trajectory:7},
+{ prayerType:1,destinationSlot:1,time:"0",amount:1,trajectory:3},
+{ prayerType:1,destinationSlot:2,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:3,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+6: {
+"slots": 2,
+"delay": 1,
+"intervals": [
+{ prayerType:2,destinationSlot:0,time:"0",amount:1,trajectory:4},
+{ prayerType:2,destinationSlot:1,time:"0",amount:1,trajectory:0},
+{ prayerType:1,destinationSlot:2,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:3,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+7: {
+"slots": 3,
+"delay": 1,
+"intervals": [
+{ prayerType:2,destinationSlot:0,time:"0",amount:1,trajectory:7},
+{ prayerType:1,destinationSlot:1,time:"0",amount:1,trajectory:4},
+{ prayerType:2,destinationSlot:2,time:"0",amount:1,trajectory:1},
+{ prayerType:1,destinationSlot:3,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+8: {
+"slots": 3,
+"delay": 1,
+"intervals": [
+{ prayerType:3,destinationSlot:0,time:"0",amount:1,trajectory:4},
+{ prayerType:1,destinationSlot:1,time:"0",amount:1,trajectory:4},
+{ prayerType:3,destinationSlot:2,time:"0",amount:1,trajectory:4},
+{ prayerType:1,destinationSlot:3,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+9: {
+"slots": 3,
+"delay": 1,
+"intervals": [
+{ prayerType:3,destinationSlot:0,time:"0",amount:1,trajectory:5},
+{ prayerType:2,destinationSlot:1,time:"0",amount:1,trajectory:4},
+{ prayerType:3,destinationSlot:2,time:"0",amount:1,trajectory:3},
+{ prayerType:1,destinationSlot:3,time:"0",amount:0,trajectory:0},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+10: {
+"slots": 4,
+"delay": 1,
+"intervals": [
+{ prayerType:3,destinationSlot:0,time:"0",amount:1,trajectory:7},
+{ prayerType:1,destinationSlot:1,time:"0",amount:1,trajectory:5},
+{ prayerType:3,destinationSlot:2,time:"0",amount:1,trajectory:3},
+{ prayerType:2,destinationSlot:3,time:"0",amount:1,trajectory:1},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+11: {
+"slots": 4,
+"delay": 1,
+"intervals": [
+{ prayerType:2,destinationSlot:0,time:"0",amount:1,trajectory:6},
+{ prayerType:2,destinationSlot:1,time:"0",amount:1,trajectory:3},
+{ prayerType:2,destinationSlot:2,time:"0",amount:1,trajectory:5},
+{ prayerType:2,destinationSlot:3,time:"0",amount:1,trajectory:2},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+12: {
+"slots": 4,
+"delay": 1,
+"intervals": [
+{ prayerType:3,destinationSlot:0,time:"0",amount:1,trajectory:7},
+{ prayerType:3,destinationSlot:1,time:"0",amount:1,trajectory:6},
+{ prayerType:3,destinationSlot:2,time:"0",amount:1,trajectory:3},
+{ prayerType:3,destinationSlot:3,time:"0",amount:1,trajectory:2},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+13: {
+"slots": 4,
+"delay": 1,
+"intervals": [
+{ prayerType:1,destinationSlot:0,time:"0",amount:1,trajectory:6},
+{ prayerType:1,destinationSlot:1,time:"0",amount:1,trajectory:5},
+{ prayerType:1,destinationSlot:2,time:"0",amount:1,trajectory:2},
+{ prayerType:1,destinationSlot:3,time:"0",amount:1,trajectory:1},
+{ prayerType:1,destinationSlot:4,time:"0",amount:0,trajectory:0},
+]
+},
+14: {
+"slots": 5,
+"delay": 1,
+"intervals": [
+{ prayerType:3,destinationSlot:0,time:"0",amount:1,trajectory:6},
+{ prayerType:2,destinationSlot:1,time:"0",amount:1,trajectory:3},
+{ prayerType:1,destinationSlot:2,time:"0",amount:1,trajectory:4},
+{ prayerType:2,destinationSlot:3,time:"0",amount:1,trajectory:5},
+{ prayerType:3,destinationSlot:4,time:"0",amount:1,trajectory:2},
+]
+},
+15: {
+"slots": 5,
+"delay": 1,
+"intervals": [
+{ prayerType:2,destinationSlot:0,time:"0",amount:1,trajectory:7},
+{ prayerType:1,destinationSlot:1,time:"0",amount:1,trajectory:5},
+{ prayerType:3,destinationSlot:2,time:"0",amount:1,trajectory:4},
+{ prayerType:1,destinationSlot:3,time:"0",amount:1,trajectory:3},
+{ prayerType:2,destinationSlot:4,time:"0",amount:1,trajectory:1},
+]
+},
+16: {
+"slots": 5,
+"delay": 1,
+"intervals": [
+{ prayerType:1,destinationSlot:0,time:"0,1000",amount:2,trajectory:7},
+{ prayerType:1,destinationSlot:1,time:"0,1000",amount:2,trajectory:5},
+{ prayerType:1,destinationSlot:2,time:"0,1000",amount:2,trajectory:4},
+{ prayerType:1,destinationSlot:3,time:"0,1000",amount:2,trajectory:3},
+{ prayerType:1,destinationSlot:4,time:"0,1000",amount:2,trajectory:1},
+]
+},
+17: {
+"slots": 5,
+"delay": 1,
+"intervals": [
+{ prayerType:2,destinationSlot:0,time:"0,1000,2000",amount:3,trajectory:7},
+{ prayerType:2,destinationSlot:1,time:"0,1000,2000",amount:3,trajectory:5},
+{ prayerType:2,destinationSlot:2,time:"0,1000,2000",amount:3,trajectory:4},
+{ prayerType:2,destinationSlot:3,time:"0,1000,2000",amount:3,trajectory:3},
+{ prayerType:2,destinationSlot:4,time:"0,1000,2000",amount:3,trajectory:1},
+]
+},
+18: {
+"slots": 5,
+"delay": 1,
+"intervals": [
+{ prayerType:3,destinationSlot:0,time:"0,1000,2000,3000",amount:4,trajectory:7},
+{ prayerType:3,destinationSlot:1,time:"0,1000,2000,3000",amount:4,trajectory:5},
+{ prayerType:3,destinationSlot:2,time:"0,1000,2000,3000",amount:4,trajectory:4},
+{ prayerType:3,destinationSlot:3,time:"0,1000,2000,3000",amount:4,trajectory:3},
+{ prayerType:3,destinationSlot:4,time:"0,1000,2000,3000",amount:4,trajectory:1},
+]
+},
+19: {
+"slots": 5,
+"delay": 1,
+"intervals": [
+{ prayerType:1,destinationSlot:0,time:"0,500,1000,1500,2000",amount:5,trajectory:7},
+{ prayerType:2,destinationSlot:1,time:"0,500,1000,1500,2000",amount:5,trajectory:5},
+{ prayerType:1,destinationSlot:2,time:"0,500,1000,1500,2000",amount:5,trajectory:4},
+{ prayerType:2,destinationSlot:3,time:"0,500,1000,1500,2000",amount:5,trajectory:3},
+{ prayerType:1,destinationSlot:4,time:"0,500,1000,1500,2000",amount:5,trajectory:1},
+]
+},
+20: {
+"slots": 5,
+"delay": 1,
+"intervals": [
+{ prayerType:3,destinationSlot:0,time:"0,300,600,900,1000,1200",amount:6,trajectory:7},
+{ prayerType:2,destinationSlot:1,time:"0,300,600,900,1000,1200",amount:6,trajectory:5},
+{ prayerType:3,destinationSlot:2,time:"0,300,600,900,1000,1200",amount:6,trajectory:4},
+{ prayerType:2,destinationSlot:3,time:"0,300,600,900,1000,1200",amount:6,trajectory:3},
+{ prayerType:1,destinationSlot:4,time:"0,300,600,900,1000,1200",amount:6,trajectory:1},
+]
+}
 }

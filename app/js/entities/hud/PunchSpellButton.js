@@ -27,7 +27,9 @@ export default class PunchSpellButton extends PIXI.Container {
     // this.fillVelocity = 0.1
     this.fillVelocity = 0.004
     this.usageBurn = 210
+  }
 
+  init () {
     this.addBehaviour(new SpellButtonBehaviour, this.fillVelocity, this.usageBurn)
   }
 

@@ -1,17 +1,25 @@
 {
   1: {
-    "velocity": 5,
+    "velocity": 1,
     "efficiency": 1,
     "hp": 1
   },
   2: {
-    "velocity": 5,
-    "efficiency": 2,
+    "velocity": 1,
+    "efficiency": 1.2,
+    "stuck_time": 0.8,
     "hp": 2
   },
   3: {
-    "velocity": 6,
-    "efficiency": 3,
+    "velocity": 1,
+    "efficiency": 1.5,
+    "stuck_time": 0.5,
     "hp": 3
+  },
+  4: {
+    "velocity": 1,
+    "efficiency": 2,
+    "stuck_time": 0.6,
+    "hp": 4
   }
 }

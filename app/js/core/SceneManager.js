@@ -44,14 +44,15 @@ export default class SceneManager extends PIXI.Container {
   }
 
   defaultTransitionIn (scene) {
+    scene.alpha = 0
     this.addChild(scene)
     return tweener.add(scene).
-      to({ alpha: 1 }, 500, Tweener.ease.easeQuintOut)
+      to({ alpha: 1 }, 800, Tweener.ease.easeQuintOut)
   }
 
   defaultTransitionOut (scene) {
     return tweener.add(scene).
-      to({ alpha: 0 }, 500, Tweener.ease.easeQuintOut).then( () => {
+      to({ alpha: 0 }, 800, Tweener.ease.easeQuintOut).then( () => {
         // dispose & remove all scene references on transition-out
         scene.emit('dispose')
         scene.off()

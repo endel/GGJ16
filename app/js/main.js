@@ -7,6 +7,7 @@ import { Howl, Howler } from 'howler'
 // Screens
 import TitleScreen from './screens/TitleScreen'
 import GameScreen from './screens/GameScreen'
+import SplashScreen from './screens/SplashScreen'
 
 console.log(require('../config/sound_effects.json'))
 window.sounds = new Howl(require('../config/sound_effects.json'));
@@ -36,7 +37,8 @@ window.playSound = function(alternatives) {
 
 Resources.load(() => {
   window.APP = new Application()
-  APP.gotoScene(GameScreen)
+  APP.gotoScene(SplashScreen)
+  // APP.gotoScene(GameScreen)
   // APP.gotoScene(TitleScreen)
   APP.update()
 })

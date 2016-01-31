@@ -6,6 +6,7 @@ export default class Resources {
     this.loader = new PIXI.loaders.Loader();
     this.loader.add('spritesheet', "images/spritesheet.json")
     this.loader.add('background', "images/background.jpg")
+    this.loader.add('splash_screen', "images/splash_screen.jpg")
     this.loader.on('complete', this.incrementLoader.bind(this))
     this.loader.load();
   }

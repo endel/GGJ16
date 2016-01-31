@@ -5,7 +5,7 @@ export default class GameOverScreen extends PIXI.Container {
   constructor () {
     super()
 
-    currentMusic.stop()
+    music.stop()
     playSound('gameover')
 
     var gameover = PIXI.Sprite.fromImage('game-over.png')

@@ -21,12 +21,14 @@ export default class GameScreen extends PIXI.Container {
 
   constructor () {
     super()
-    currentMusic = music.play('title_screen').loop(true)
+    currentMusic = music.play('title_screen').loop(true).volume(0.25)
 
     this.waveController = new WaveController
 
     this.bg = new PIXI.Sprite.fromImage('images/background.jpg')
     this.addChild(this.bg)
+
+    sounds.play('God_IntroScreen_Snoring').volume(0.5)
 
     //
     // Actions
@@ -71,13 +73,6 @@ export default class GameScreen extends PIXI.Container {
     this.actionsContainer.alpha = 0
     this.actionsContainer.y = APP.height
 
-    // Kills
-    this.killCounter = new KillCounter('0')
-    this.killCounter.x = APP.width / 2
-    this.killCounter.y = -this.killCounter.height
-    this.killCounter.punchAction = this.punchAction // TODO: move me to elsewhere
-    this.addChild(this.killCounter)
-
     //
     // God
     //
@@ -112,6 +107,7 @@ export default class GameScreen extends PIXI.Container {
     this.notification.pivot.y = this.notification.bg.height / 2
     this.notification.x = APP.width / 2
     this.notification.y = APP.height - this.notification.height - 80
+    this.notification.punchAction = this.punchAction // TODO: move me to elsewhere
     this.notification.goUp()
     this.addChild(this.notification)
 
@@ -164,7 +160,6 @@ export default class GameScreen extends PIXI.Container {
     // bottomGradient.y = APP.height - bottomGradient.height
     // this.actionsContainer.y = APP.height - this.actionsContainer.height - 30
     // this.topGradient.y = 0
-    // this.killCounter.y = 30
     // this.actionsContainer.alpha = 1
     // currentMusic = music.play('loop').loop(true)
     // this.notification.y = this.god.y + this.god.height / 3
@@ -173,8 +168,17 @@ export default class GameScreen extends PIXI.Container {
   }
 
   startGame () {
+    sounds.stop('God_IntroScreen_Snoring')
+    playSound('UI_Button')
+    this.god.setFace('serious')
+
     this.notification.removeAllListeners()
     this.notification.buttonMode = this.notification.interactive = false
+
+    // tweener.add(this.god.punchShadow).
+    //   to({ alpha: 0 }, 200, Tweener.ease.quintInOut).then(() => {
+    //     this.god.removeChild(this.god.punchShadow)
+    //   })
 
     tweener.add(this.bottomGradient).
       wait(1500).
@@ -184,10 +188,7 @@ export default class GameScreen extends PIXI.Container {
       to({ y: APP.height - this.actionsContainer.height - 30, alpha: 1 }, 1000, Tweener.ease.quintInOut)
     tweener.add(this.topGradient).
       wait(1500).
-      to({ y: 0 }, 1000, Tweener.ease.quintInOut)
-    tweener.add(this.killCounter).
-      wait(1500).
-      to({ y: 30 }, 1000, Tweener.ease.quintInOut).
+      to({ y: 0 }, 1000, Tweener.ease.quintInOut).
       then(() => {
         currentMusic.stop()
         currentMusic = music.play('loop').loop(true)
@@ -197,6 +198,7 @@ export default class GameScreen extends PIXI.Container {
           thunderAction: this.thunderAction,
           punchAction: this.punchAction,
           frozenAction: this.frozenAction,
+          notification: this.notification,
           killCounter: this.killCounter
         })
 
@@ -209,11 +211,19 @@ export default class GameScreen extends PIXI.Container {
     tweener.add(this.introUfoLight).
       to({ alpha: 0 }, 1000, Tweener.ease.quintInOut)
 
+    // remove "play" from notification, show kills
+    tweener.add(this.notification.text).
+      to({ alpha: 0 }, 2000, Tweener.ease.quintInOut)
+    tweener.add(this.notification.kills).
+      to({ alpha: 1 }, 2000, Tweener.ease.quintInOut)
+
     // move notification to god
     tweener.add(this.notification).
-      to({ y: destGodY + this.god.height / 3 }, 2500, Tweener.ease.quintInOut).
-      then( () => { })
+      to({ y: destGodY + this.god.height / 3 }, 2500, Tweener.ease.quintInOut)
 
+    // move notification to god
+    tweener.add(this.notification).
+      to({ y: destGodY + this.god.height / 3 }, 2500, Tweener.ease.quintInOut)
 
     tweener.add(this.introUfoLight.scale).
       to({ y: 0.6 }, 1000, Tweener.ease.quintInOut).
@@ -243,14 +253,25 @@ export default class GameScreen extends PIXI.Container {
   }
 
   introGoDown () {
+    if (!this.introUfoLight.parent) return
+
     tweener.add(this.introUfo).
       to({ y: this.introUfo.y+8 }, 1000, Tweener.ease.quadInOut).
-      then(() => {
-        if (this.introUfoLight.parent) {
-         this.introGoUp.bind(this)
-        }
-      })
+      then(this.introGoUp.bind(this))
   }
+
+  // introScaleShadowUp () {
+  //   tweener.add(this.god.punchShadow.scale).
+  //     to({ x: 1.02, y: 1.02 }, 1000, Tweener.ease.quadInOut).
+  //     then(this.introScaleShadowDown.bind(this))
+  // }
+
+  // introScaleShadowDown () {
+  //   if (!this.introUfoLight.parent) return
+  //   tweener.add(this.god.punchShadow.scale).
+  //     to({ x: 0.98, y: 0.98 }, 1000, Tweener.ease.quadInOut).
+  //     then(this.introScaleShadowUp.bind(this))
+  // }
 
   scaleXUp () {
     tweener.add(this.introUfoLight.scale).
@@ -259,11 +280,11 @@ export default class GameScreen extends PIXI.Container {
   }
 
   scaleXDown () {
+    if (!this.introUfoLight.parent) return
+
     tweener.add(this.introUfoLight.scale).
       to({ x: 0.95 }, 1500, Tweener.ease.quadInOut).
-      then(() => {
-        if (this.introUfoLight.parent) { this.scaleXUp.bind(this) }
-      })
+      then(this.scaleXUp.bind(this))
   }
 
   onTouchStart (e) {

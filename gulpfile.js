@@ -98,7 +98,7 @@ gulp.task('audio', function() {
     format: 'howler',
     output: 'dist/sound/sound_effects',
     path: 'sound',
-    // loop: ['game_background', 'intro_background']
+    loop: ['God_IntroScreen_Snoring', 'intro_background']
   };
 
   audiosprite(files, options, function(err, obj) {
