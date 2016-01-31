@@ -20,7 +20,7 @@ export default class Blood extends PIXI.Sprite {
     tweener.add(this).
       to({ alpha: 1 }, 500, Tweener.ease.quintOut).
       wait(3000).
-      to({ alpha: 0 }, 5000, Tweener.ease.quintOut).then( () => {
+      to({ alpha: 0 }, 10000, Tweener.ease.quintOut).then( () => {
         this.parent.removeChild(this)
       })
   }

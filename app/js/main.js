@@ -5,18 +5,15 @@ import Application from './Application'
 import { Howl, Howler } from 'howler'
 
 // Screens
-import TitleScreen from './screens/TitleScreen'
 import GameScreen from './screens/GameScreen'
 import SplashScreen from './screens/SplashScreen'
+import GameOverScreen from './screens/GameOverScreen'
 
 console.log(require('../config/sound_effects.json'))
 window.sounds = new Howl(require('../config/sound_effects.json'));
 window.music = new Howl(require('../config/music.json'));
 
 window.currentMusic = null
-
-sounds.on('load', () => { console.log("Effects loaded") })
-music.on('load', () => { console.log("Music loaded") })
 
 var lastSoundPlayed = {}
 window.playSound = function(alternatives) {
@@ -38,6 +35,8 @@ window.playSound = function(alternatives) {
 Resources.load(() => {
   window.APP = new Application()
   APP.gotoScene(SplashScreen)
+
+  // APP.gotoScene(GameOverScreen)
   // APP.gotoScene(GameScreen)
   // APP.gotoScene(TitleScreen)
   APP.update()

@@ -74,7 +74,7 @@ gulp.task('html', ['javascript', 'stylesheet'], function () {
 
   return gulp.src('app/*.html')
     .pipe(assets)
-    .pipe($.if('*.js', $.uglify()))
+    // .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
@@ -98,7 +98,7 @@ gulp.task('audio', function() {
     format: 'howler',
     output: 'dist/sound/sound_effects',
     path: 'sound',
-    loop: ['God_IntroScreen_Snoring', 'intro_background']
+    loop: ['God_IntroScreen_Snoring', 'Humans_Ennemy2_Skate', 'Humans_Ennemy3_Bike', '']
   };
 
   audiosprite(files, options, function(err, obj) {

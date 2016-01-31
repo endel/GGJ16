@@ -1,6 +1,6 @@
 export default class Notification extends PIXI.Container {
 
-  constructor () {
+  constructor (text = "Play") {
     super()
 
     this.container = new PIXI.Container()
@@ -9,9 +9,9 @@ export default class Notification extends PIXI.Container {
     this.bg = new PIXI.Sprite.fromImage('faixa1.png')
     this.container.addChild(this.bg)
 
-    this.killAmount = 0
+    APP.killAmount = 0
 
-    this.text = new PIXI.Text("Play", { font: "38px Berry_Rotunda", fill: 0x663910, textAlign: 'center' })
+    this.text = new PIXI.Text(text, { font: "38px Berry_Rotunda", fill: 0x663910, textAlign: 'center' })
     this.text.pivot.x = this.text.width / 2
     this.text.x = this.bg.width / 2
     this.text.y = 60
@@ -31,8 +31,8 @@ export default class Notification extends PIXI.Container {
   }
 
   incrementKill () {
-    this.killAmount++
-    this.label = this.killAmount.toString() + " kills"
+    APP.killAmount++
+    this.label = APP.killAmount.toString() + " kills"
 
     var fillPerKill = 5
 

@@ -127,16 +127,16 @@ export default class GodBehaviour extends Behaviour {
       this.punchAction.getEntity().emit('use')
       this.object.animatePunch(() => {
         let killed = false
-        for (var i=0; i<this.waveController.object.slots.length; i++) {
-          let slot = this.waveController.object.slots[i]
-          slot.prayers.forEach(prayer => {
-            prayer.hp -= 5
-            if (prayer.hp <= 0) {
-              killed = true
-              this.notification.incrementKill()
-              prayer.detach()
-            }
-          })
+        var prayersAlive = this.waveController.prayersAlive
+
+        for (var i=0; i<prayersAlive.length; i++) {
+          let prayer = prayersAlive[i].behaviour
+          prayer.hp -= 5
+          if (prayer.hp <= 0) {
+            killed = true
+            this.notification.incrementKill()
+            prayer.detach()
+          }
         }
 
         if (killed) {
@@ -176,6 +176,10 @@ export default class GodBehaviour extends Behaviour {
 
   checkStatus () {
     if (this.waveController.prayers.length > 0 && this.object.currentFace !== 'attack') {
+
+      // 'Human_Man_HIT_01', 'Human_Man_HIT_02', 'Human_Man_HIT_03', 'Human_Man_HIT_04', 'Human_Man_HIT_05', 'Human_Man_HIT_06', 'Human_Man_HIT_07', 'Human_Man_HIT_08', 'Human_Man_HIT_09'
+
+
 
       // set damage face
       var damageVariations = ['damage', 'damage2']

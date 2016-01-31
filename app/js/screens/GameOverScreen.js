@@ -1,4 +1,8 @@
 import GameScreen from './GameScreen'
+import CrazyButton from '../entities/hud/CrazyButton'
+import Textbox from '../entities/hud/Textbox'
+import Notification from '../entities/hud/Notification'
+import God from '../entities/God'
 
 export default class GameOverScreen extends PIXI.Container {
 
@@ -8,26 +12,50 @@ export default class GameOverScreen extends PIXI.Container {
     music.stop()
     playSound('gameover')
 
-    var gameover = PIXI.Sprite.fromImage('game-over.png')
+    this.bg = new PIXI.Sprite.fromImage('images/background.jpg')
+    this.addChild(this.bg)
 
-    gameover.pivot.x = gameover.width / 2
-    gameover.pivot.y = gameover.height / 2
+    var god = new God()
+    god.setFace('lost')
+    god.x = APP.width / 2
+    god.y = APP.height / 2
+    this.addChild(god)
 
-    gameover.x = APP.width / 2
-    gameover.y = APP.height / 2
-    this.addChild(gameover)
+    this.notification = new Notification(`${ (APP.killAmount||0) } kills`)
+    this.notification.pivot.x = this.notification.bg.width / 2
+    this.notification.pivot.y = this.notification.bg.height / 2
+    this.notification.x = APP.width / 2
+    this.notification.y = APP.height / 2 + 100
+    this.addChild(this.notification)
+    this.goUp()
 
-    var retry = new PIXI.Text("Try again", {font : '24px Arial', fill : 0xff1010, align : 'center'})
-    retry.interactive = true
-    retry.x = APP.width / 2
-    retry.y = APP.height / 2 + 200
-    retry.pivot.set( retry.width / 2, retry.height / 2 )
-    retry.on('click', () => this.emit('goto', GameScreen))
-    retry.on('touchstart', () => this.emit('goto', GameScreen))
-    this.addChild(retry)
+    var label = new Textbox("You were summoned.")
+    label.x = APP.width / 2
+    label.y = 100
+    this.addChild(label)
+
+    var button = new CrazyButton()
+    button.x = APP.width / 2
+    button.y = APP.height - button.height
+    button.buttonMode = button.interactive = true
+    button.on('click', () => this.emit('goto', GameScreen))
+    button.on('touchstart', () => this.emit('goto', GameScreen))
+    this.addChild(button)
   }
 
   onDispose () {
+  }
+
+  goUp () {
+    tweener.add(this.notification).
+      to({ y: this.notification.y-8 }, 1000, Tweener.ease.quadInOut).
+      then(this.goDown.bind(this))
+  }
+
+  goDown () {
+    tweener.add(this.notification).
+      to({ y: this.notification.y+8 }, 1000, Tweener.ease.quadInOut).
+      then(this.goUp.bind(this))
   }
 
 }

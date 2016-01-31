@@ -113,7 +113,9 @@ export default class PrayerBehaviour extends Behaviour {
 
     // this.object.addChild(this.object.dead)
     tweener.add(this.object).to({ alpha: 0 }, 300, Tweener.ease.quintOut).then(() => {
-      this.object.parent.removeChild(this.object)
+      clock.setTimeout(() => {
+        this.object.parent.removeChild(this.object)
+      }, 1000)
     })
 
     // blood effect

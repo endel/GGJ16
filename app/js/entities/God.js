@@ -115,6 +115,8 @@ export default class God extends PIXI.Container {
 
     this.punchShadow.scale.set(0.1, 0.1)
 
+    clock.setTimeout(callback, 400)
+
     tweener.remove(this.punchShadow.scale)
     tweener.add(this.punchShadow.scale).
       to({ x: 1, y: 1 }, 500, Tweener.ease.quartOut)
@@ -127,7 +129,6 @@ export default class God extends PIXI.Container {
       wait(200).
       to({y: -160}, 400, Tweener.ease.quintOut).
       then(() => {
-        callback()
 
         tweener.add(this.punchShadow).
           wait(200).
