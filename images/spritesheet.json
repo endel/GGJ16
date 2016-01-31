@@ -149,7 +149,7 @@
 			"spriteSourceSize": {"x":0,"y":0,"w":400,"h":337},
 			"sourceSize": {"w":400,"h":337}
 		},
-		"jesus5.png":
+		"jesus1.png":
 		{
 			"frame": {"x":2688,"y":1927,"w":400,"h":335},
 			"rotated": false,
@@ -157,7 +157,7 @@
 			"spriteSourceSize": {"x":0,"y":0,"w":400,"h":335},
 			"sourceSize": {"w":400,"h":335}
 		},
-		"jesus1.png":
+		"jesus5.png":
 		{
 			"frame": {"x":2266,"y":501,"w":400,"h":335},
 			"rotated": false,
@@ -173,17 +173,17 @@
 			"spriteSourceSize": {"x":0,"y":0,"w":394,"h":393},
 			"sourceSize": {"w":394,"h":393}
 		},
-		"game-over.png":
+		"replay.png":
 		{
-			"frame": {"x":2266,"y":1233,"w":320,"h":320},
+			"frame": {"x":2266,"y":1233,"w":389,"h":381},
 			"rotated": false,
 			"trimmed": false,
-			"spriteSourceSize": {"x":0,"y":0,"w":320,"h":320},
-			"sourceSize": {"w":320,"h":320}
+			"spriteSourceSize": {"x":0,"y":0,"w":389,"h":381},
+			"sourceSize": {"w":389,"h":381}
 		},
 		"loader.png":
 		{
-			"frame": {"x":2266,"y":1555,"w":261,"h":185},
+			"frame": {"x":2266,"y":1616,"w":261,"h":185},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":261,"h":185},
@@ -191,7 +191,7 @@
 		},
 		"deathcounter.png":
 		{
-			"frame": {"x":2266,"y":1742,"w":242,"h":92},
+			"frame": {"x":1011,"y":850,"w":242,"h":92},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":242,"h":92},
@@ -471,7 +471,7 @@
 		},
 		"skate_walk0027.png":
 		{
-			"frame": {"x":2529,"y":1555,"w":125,"h":180},
+			"frame": {"x":2529,"y":1616,"w":125,"h":180},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":125,"h":180},
@@ -959,7 +959,7 @@
 		},
 		"Pray0011.png":
 		{
-			"frame": {"x":2588,"y":1233,"w":75,"h":168},
+			"frame": {"x":2154,"y":1423,"w":75,"h":168},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":75,"h":168},
@@ -967,7 +967,7 @@
 		},
 		"Pray0012.png":
 		{
-			"frame": {"x":2154,"y":1423,"w":75,"h":168},
+			"frame": {"x":2173,"y":1633,"w":75,"h":168},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":75,"h":168},
@@ -975,7 +975,7 @@
 		},
 		"Pray0013.png":
 		{
-			"frame": {"x":2173,"y":1633,"w":75,"h":168},
+			"frame": {"x":1369,"y":2312,"w":75,"h":168},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":75,"h":168},
@@ -983,7 +983,7 @@
 		},
 		"Pray0009.png":
 		{
-			"frame": {"x":1369,"y":2312,"w":75,"h":168},
+			"frame": {"x":1446,"y":2312,"w":75,"h":168},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":75,"h":168},
@@ -991,7 +991,7 @@
 		},
 		"Pray0008.png":
 		{
-			"frame": {"x":1446,"y":2312,"w":75,"h":168},
+			"frame": {"x":1523,"y":2312,"w":75,"h":168},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":75,"h":168},
@@ -999,7 +999,7 @@
 		},
 		"Pray0007.png":
 		{
-			"frame": {"x":1523,"y":2312,"w":75,"h":168},
+			"frame": {"x":1600,"y":2312,"w":75,"h":168},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":75,"h":168},
@@ -1007,7 +1007,7 @@
 		},
 		"Pray0006.png":
 		{
-			"frame": {"x":1600,"y":2312,"w":75,"h":168},
+			"frame": {"x":1677,"y":2312,"w":75,"h":168},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":75,"h":168},
@@ -1015,7 +1015,7 @@
 		},
 		"Pray0005.png":
 		{
-			"frame": {"x":1677,"y":2312,"w":75,"h":168},
+			"frame": {"x":1754,"y":2312,"w":75,"h":168},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":75,"h":168},
@@ -1023,7 +1023,7 @@
 		},
 		"Pray0004.png":
 		{
-			"frame": {"x":1754,"y":2312,"w":75,"h":168},
+			"frame": {"x":1831,"y":2312,"w":75,"h":168},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":75,"h":168},
@@ -1031,7 +1031,7 @@
 		},
 		"Pray0003.png":
 		{
-			"frame": {"x":1831,"y":2312,"w":75,"h":168},
+			"frame": {"x":1908,"y":2312,"w":75,"h":168},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":75,"h":168},
@@ -1039,7 +1039,7 @@
 		},
 		"Pray0002.png":
 		{
-			"frame": {"x":1908,"y":2312,"w":75,"h":168},
+			"frame": {"x":1985,"y":2312,"w":75,"h":168},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":75,"h":168},
@@ -1047,7 +1047,7 @@
 		},
 		"skate_pray0008.png":
 		{
-			"frame": {"x":1011,"y":850,"w":103,"h":128},
+			"frame": {"x":599,"y":845,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1055,7 +1055,7 @@
 		},
 		"skate_pray0014.png":
 		{
-			"frame": {"x":1116,"y":850,"w":103,"h":128},
+			"frame": {"x":704,"y":845,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1063,7 +1063,7 @@
 		},
 		"skate_pray0003.png":
 		{
-			"frame": {"x":1221,"y":850,"w":103,"h":128},
+			"frame": {"x":809,"y":845,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1071,7 +1071,7 @@
 		},
 		"skate_pray0004.png":
 		{
-			"frame": {"x":1326,"y":850,"w":103,"h":128},
+			"frame": {"x":2062,"y":2312,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1079,7 +1079,7 @@
 		},
 		"skate_pray0005.png":
 		{
-			"frame": {"x":599,"y":845,"w":103,"h":128},
+			"frame": {"x":2167,"y":2312,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1087,7 +1087,7 @@
 		},
 		"skate_pray0006.png":
 		{
-			"frame": {"x":704,"y":845,"w":103,"h":128},
+			"frame": {"x":2272,"y":2312,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1095,7 +1095,7 @@
 		},
 		"skate_pray0007.png":
 		{
-			"frame": {"x":809,"y":845,"w":103,"h":128},
+			"frame": {"x":2377,"y":2312,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1103,7 +1103,7 @@
 		},
 		"skate_pray0001.png":
 		{
-			"frame": {"x":1985,"y":2312,"w":103,"h":128},
+			"frame": {"x":2482,"y":2312,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1111,7 +1111,7 @@
 		},
 		"skate_pray0009.png":
 		{
-			"frame": {"x":2090,"y":2312,"w":103,"h":128},
+			"frame": {"x":2587,"y":2312,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1119,7 +1119,7 @@
 		},
 		"skate_pray0010.png":
 		{
-			"frame": {"x":2195,"y":2312,"w":103,"h":128},
+			"frame": {"x":2692,"y":2312,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1127,7 +1127,7 @@
 		},
 		"skate_pray0011.png":
 		{
-			"frame": {"x":2300,"y":2312,"w":103,"h":128},
+			"frame": {"x":2797,"y":2312,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1135,7 +1135,7 @@
 		},
 		"skate_pray0012.png":
 		{
-			"frame": {"x":2405,"y":2312,"w":103,"h":128},
+			"frame": {"x":2902,"y":2312,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1143,7 +1143,7 @@
 		},
 		"skate_pray0013.png":
 		{
-			"frame": {"x":2510,"y":2312,"w":103,"h":128},
+			"frame": {"x":3007,"y":2312,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1151,7 +1151,7 @@
 		},
 		"skate_pray0002.png":
 		{
-			"frame": {"x":2615,"y":2312,"w":103,"h":128},
+			"frame": {"x":1,"y":2489,"w":103,"h":128},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":103,"h":128},
@@ -1159,7 +1159,7 @@
 		},
 		"button-snow-inactive.png":
 		{
-			"frame": {"x":2720,"y":2312,"w":122,"h":122},
+			"frame": {"x":106,"y":2489,"w":122,"h":122},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
@@ -1167,7 +1167,7 @@
 		},
 		"button-thunder.png":
 		{
-			"frame": {"x":2844,"y":2312,"w":122,"h":122},
+			"frame": {"x":230,"y":2489,"w":122,"h":122},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
@@ -1175,7 +1175,7 @@
 		},
 		"button-thunder-inactive.png":
 		{
-			"frame": {"x":2968,"y":2312,"w":122,"h":122},
+			"frame": {"x":354,"y":2489,"w":122,"h":122},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
@@ -1183,7 +1183,7 @@
 		},
 		"button-snow.png":
 		{
-			"frame": {"x":1,"y":2489,"w":122,"h":122},
+			"frame": {"x":478,"y":2489,"w":122,"h":122},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":122,"h":122},
