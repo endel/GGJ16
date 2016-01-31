@@ -21,6 +21,14 @@ export default class Prayer extends PIXI.Container {
       this.praying = new PIXI.extras.MovieClip([
         PIXI.Texture.fromImage('skate_pray0001.png'), PIXI.Texture.fromImage('skate_pray0002.png'), PIXI.Texture.fromImage('skate_pray0003.png'), PIXI.Texture.fromImage('skate_pray0004.png'), PIXI.Texture.fromImage('skate_pray0005.png'), PIXI.Texture.fromImage('skate_pray0006.png'), PIXI.Texture.fromImage('skate_pray0007.png'), PIXI.Texture.fromImage('skate_pray0008.png'), PIXI.Texture.fromImage('skate_pray0009.png'), PIXI.Texture.fromImage('skate_pray0010.png'), PIXI.Texture.fromImage('skate_pray0011.png'), PIXI.Texture.fromImage('skate_pray0012.png'), PIXI.Texture.fromImage('skate_pray0013.png'), PIXI.Texture.fromImage('skate_pray0014.png'),
       ])
+
+    } else if (typeId === 3) {
+      this.walking = new PIXI.extras.MovieClip([
+        PIXI.Texture.fromImage('unicorn_walk0001.png'), PIXI.Texture.fromImage('unicorn_walk0002.png'), PIXI.Texture.fromImage('unicorn_walk0003.png'), PIXI.Texture.fromImage('unicorn_walk0004.png'), PIXI.Texture.fromImage('unicorn_walk0005.png'), PIXI.Texture.fromImage('unicorn_walk0006.png'), PIXI.Texture.fromImage('unicorn_walk0007.png'), PIXI.Texture.fromImage('unicorn_walk0008.png'), PIXI.Texture.fromImage('unicorn_walk0009.png'), PIXI.Texture.fromImage('unicorn_walk0010.png'), PIXI.Texture.fromImage('unicorn_walk0011.png'), PIXI.Texture.fromImage('unicorn_walk0012.png'), PIXI.Texture.fromImage('unicorn_walk0013.png'),
+      ])
+      this.praying = new PIXI.extras.MovieClip([
+        PIXI.Texture.fromImage('unicorn_pray0001.png'), PIXI.Texture.fromImage('unicorn_pray0002.png'), PIXI.Texture.fromImage('unicorn_pray0003.png'), PIXI.Texture.fromImage('unicorn_pray0004.png'), PIXI.Texture.fromImage('unicorn_pray0005.png'), PIXI.Texture.fromImage('unicorn_pray0006.png'), PIXI.Texture.fromImage('unicorn_pray0007.png'), PIXI.Texture.fromImage('unicorn_pray0008.png'), PIXI.Texture.fromImage('unicorn_pray0009.png'), PIXI.Texture.fromImage('unicorn_pray0010.png'), PIXI.Texture.fromImage('unicorn_pray0011.png'), PIXI.Texture.fromImage('unicorn_pray0012.png'), PIXI.Texture.fromImage('unicorn_pray0013.png'), PIXI.Texture.fromImage('unicorn_pray0014.png'), PIXI.Texture.fromImage('unicorn_pray0015.png'), PIXI.Texture.fromImage('unicorn_pray0016.png'), PIXI.Texture.fromImage('unicorn_pray0017.png'), PIXI.Texture.fromImage('unicorn_pray0018.png')
+      ])
     }
 
     this.walking.pivot.x = this.walking.width / 2

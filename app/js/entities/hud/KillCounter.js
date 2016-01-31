@@ -15,6 +15,13 @@ export default class KillCounter extends PIXI.Container {
 
   increment () {
     this.text.text = parseInt(this.text.text)+1
+
+    var fillPerKill = 5
+
+    this.punchAction.cooldownMask.y = Math.max(
+      this.punchAction.cooldownMask.targetY,
+      this.punchAction.cooldownMask.y - fillPerKill
+    )
   }
 
 }

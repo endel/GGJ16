@@ -39,8 +39,9 @@ export default class Application {
       this.sceneManager.x = (window.innerWidth - this.renderer.view.width) / 2
     }
 
-    // this.renderer.view.style.width = `${ratio*(width)}px`
-    // this.renderer.view.style.height = `${ratio*(height)}px`
+    window.addEventListener('blur', this.pauseGame.bind(this))
+    window.addEventListener('focus', this.unpauseGame.bind(this))
+    document.addEventListener('visibilitychange', this.onVisibilityChange.bind(this))
 
     this.componentSystem = createComponentSystem(PIXI.DisplayObject)
   }
@@ -56,6 +57,17 @@ export default class Application {
   gotoScene (sceneClass) {
     this.sceneManager.goTo(sceneClass)
   }
+
+  onVisibilityChange () {
+    if (document.hidden) {
+      this.pauseGame()
+    } else {
+      this.unpauseGame()
+    }
+  }
+
+  pauseGame () { clock.stop() }
+  unpauseGame () { clock.start() }
 
   update () {
     window.requestAnimationFrame( this.update.bind( this) )

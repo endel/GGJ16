@@ -8,6 +8,8 @@ var prayerTypes = require('../../../config/prayers.json')
 export default class PrayerBehaviour extends Behaviour {
 
   onAttach (config, waveController) {
+    playSound('Human_All_Walking_loop')
+
     this.waveController = waveController
     this.attributes = prayerTypes[ config.type ]
 
@@ -38,6 +40,8 @@ export default class PrayerBehaviour extends Behaviour {
       this._hp = value
       this.stopped = true
       this.object.stop()
+
+      this.object.addBehaviour(new Explosion)
 
       clock.setTimeout(() => {
         this.stopped = false
@@ -72,9 +76,14 @@ export default class PrayerBehaviour extends Behaviour {
       Math.pow((this.object.y-this.targetSlot.y), 2)
     )
 
-    if (distance < 5) {
+    if (distance < 8) {
+      playSound('Human_Fem_ScreenEntrance')
+
       this.praying = true
 
+      if (this.targetSlot.prayers.length) {
+        this.object.x += 20 * this.targetSlot.prayers.length
+      }
       this.targetSlot.prayers.push(this)
       this.waveController.prayers.push(this)
 
@@ -117,7 +126,6 @@ export default class PrayerBehaviour extends Behaviour {
     blood.position.copy(this.object.position)
     this.object.parent.addChild(blood)
 
-    this.object.addBehaviour(new Explosion)
     console.log("Detached! Destroy this entity!")
   }
 

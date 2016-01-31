@@ -4,7 +4,6 @@ export default class Thunder extends PIXI.Container {
     super()
 
     if (Math.random() > 0.5) {
-    // if (false) {
       this.thunder1 = new PIXI.Sprite.fromImage('ray1.png')
       this.thunder1.pivot.x = -180
       this.thunder1.pivot.y = this.thunder1.height/6

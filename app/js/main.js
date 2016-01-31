@@ -20,7 +20,7 @@ music.on('load', () => { console.log("Music loaded") })
 var lastSoundPlayed = {}
 window.playSound = function(alternatives) {
   if (typeof(alternatives)==="string") {
-    sounds.play(alternatives)
+    return sounds.play(alternatives)
 
   } else {
     // play a different sound every time it's called
@@ -30,7 +30,7 @@ window.playSound = function(alternatives) {
     } while (i === lastSoundPlayed[ alternatives ])
 
     lastSoundPlayed[ alternatives ] = i
-    sounds.play(alternatives[i])
+    return sounds.play(alternatives[i])
   }
 }
 

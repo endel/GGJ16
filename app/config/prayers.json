@@ -8,5 +8,10 @@
     "velocity": 5,
     "efficiency": 2,
     "hp": 2
+  },
+  3: {
+    "velocity": 6,
+    "efficiency": 3,
+    "hp": 3
   }
 }

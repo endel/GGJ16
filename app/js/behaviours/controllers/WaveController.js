@@ -23,7 +23,6 @@ export default class WaveController extends Behaviour {
     this.lifebar = options.lifebar
 
     this.on('start', this.onStart.bind(this))
-    this.emit('start')
   }
 
   onStart () {
@@ -108,7 +107,7 @@ export default class WaveController extends Behaviour {
   }
 
   onPrayerKilled () {
-    this.activePrayers--
+    this.activePrayers--;
     if (this.activePrayers === 0) {
       clock.setTimeout( this.gotoNextWave.bind(this), (this.nextWaveConfig.delay || 0) * 1000 )
     }
